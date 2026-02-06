@@ -155,11 +155,11 @@ export default function Gallery() {
                 <h2 className={styles.ctaTitle}>Хотите такой же результат?</h2>
                 <p className={styles.ctaDesc}>Запишитесь на сервис прямо сейчас</p>
                 <div className={styles.ctaButtons}>
-                    <a href="tel:+79110141751" className={styles.btnPrimary}>
+                    <a href="tel:+79110141751" className={styles.btnPhone}>
                         <PhoneIcon /> +7 (911) 014-17-51
                     </a>
-                    <Link href="/" className={styles.btnSecondary}>
-                        НА ГЛАВНУЮ <ArrowRightIcon />
+                    <Link href="/" className={styles.btnBack}>
+                        <ArrowLeftIcon /> НА ГЛАВНУЮ
                     </Link>
                 </div>
             </section>

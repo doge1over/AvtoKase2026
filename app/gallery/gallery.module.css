@@ -147,6 +147,28 @@
     box-shadow: 0 10px 30px rgba(182, 36, 38, 0.5);
 }
 
+.btnSecondary {
+    background: transparent;
+    border: 2px solid #333;
+    padding: 16px 32px;
+    color: #fff;
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.btnSecondary:hover {
+    border-color: #b62426;
+    color: #b62426;
+}
+
 /* === HERO SMALL === */
 .heroSmall {
     padding: 140px 60px 60px;
@@ -180,42 +202,6 @@
     font-size: 18px;
     max-width: 500px;
     margin: 0 auto;
-}
-
-/* === CATEGORIES === */
-.categories {
-    padding: 0 60px 60px;
-}
-
-.categoriesContainer {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    flex-wrap: wrap;
-}
-
-.categoryBtn {
-    background: transparent;
-    border: 1px solid #333;
-    padding: 12px 24px;
-    color: #999;
-    font-family: 'Unbounded', sans-serif;
-    font-weight: 500;
-    font-size: 12px;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.categoryBtn:hover {
-    border-color: #b62426;
-    color: #b62426;
-}
-
-.categoryBtnActive {
-    background: linear-gradient(135deg, #b62426 0%, #8a1c1e 100%);
-    border-color: #b62426;
-    color: #fff;
 }
 
 /* === GALLERY === */
@@ -309,7 +295,7 @@
 
 /* === CTA SMALL === */
 .ctaSmall {
-    padding: 80px 60px;
+    padding: 100px 60px;
     background: linear-gradient(135deg, #b62426 0%, #8a1c1e 100%);
     text-align: center;
 }
@@ -324,7 +310,58 @@
 .ctaDesc {
     font-size: 18px;
     opacity: 0.9;
-    margin-bottom: 32px;
+    margin-bottom: 40px;
+}
+
+.ctaButtons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.btnPhone {
+    background: #fff;
+    border: none;
+    padding: 20px 48px;
+    color: #b62426;
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.btnPhone:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.btnBack {
+    background: transparent;
+    border: 2px solid rgba(255,255,255,0.4);
+    padding: 14px 28px;
+    color: #fff;
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.btnBack:hover {
+    border-color: #fff;
+    background: rgba(255,255,255,0.1);
 }
 
 /* === FOOTER === */
@@ -437,10 +474,6 @@
         padding: 120px 20px 40px;
     }
 
-    .categories {
-        padding: 0 20px 40px;
-    }
-
     .gallerySection {
         padding: 0 20px 60px;
     }
@@ -452,6 +485,11 @@
 
     .ctaSmall {
         padding: 60px 20px;
+    }
+
+    .ctaButtons {
+        flex-direction: column;
+        align-items: center;
     }
 
     .footer {

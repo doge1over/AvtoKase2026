@@ -4,15 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="142ff275-c47c-46ab-9f4a-e367dc51fc6e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/gallery/gallery.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/gallery/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/layout.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/page.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/page.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
+    <list default="true" id="142ff275-c47c-46ab-9f4a-e367dc51fc6e" name="Changes" comment="1">
+      <change beforePath="$PROJECT_DIR$/app/gallery/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/gallery/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,8 +103,17 @@
       <option name="presentableId" value="Default" />
       <updated>1770300198268</updated>
       <workItem from="1770300199306" duration="2123000" />
-      <workItem from="1770410721610" duration="1970000" />
+      <workItem from="1770410721610" duration="2643000" />
     </task>
+    <task id="LOCAL-00001" summary="1">
+      <option name="closed" value="true" />
+      <created>1770412785077</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1770412785077</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -122,5 +124,9 @@
         <option value="$PROJECT_DIR$/app/layout.js" />
       </list>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="1" />
+    <option name="LAST_COMMIT_MESSAGE" value="1" />
   </component>
 </project>
