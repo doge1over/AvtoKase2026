@@ -8,20 +8,31 @@ export default function Gallery() {
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
     const galleryItems = [
-        { id: 1, src: 'https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800', title: 'Капитальный ремонт двигателя BMW' },
-        { id: 2, src: 'https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=800', title: 'Замена подвески Toyota' },
-        { id: 3, src: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800', title: 'Шиномонтаж R20' },
-        { id: 4, src: 'https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?w=800', title: 'Диагностика Mercedes' },
-        { id: 5, src: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800', title: 'Тюнинг Land Cruiser' },
-        { id: 6, src: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800', title: 'Ремонт Porsche' },
-        { id: 7, src: 'https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=800', title: 'Развал-схождение Audi' },
-        { id: 8, src: 'https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=800', title: 'Подготовка к бездорожью' },
-        { id: 9, src: 'https://images.unsplash.com/photo-1542362567-b07e54358753?w=800', title: 'Балансировка колёс' },
-        { id: 10, src: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=800', title: 'Замена масла в АКПП' },
-        { id: 11, src: 'https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=800', title: 'Ремонт тормозной системы' },
-        { id: 12, src: 'https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=800', title: 'Лифт подвески Pajero' },
+        { id: 1, src: '/gallery/IMG_8192 1.png', title: 'Работа 1' },
+        { id: 2, src: '/gallery/IMG_8311 1.png', title: 'Работа 2' },
+        { id: 3, src: '/gallery/IMG_72311 1.png', title: 'Работа 3' },
+        { id: 4, src: '/gallery/IMG_72331 1.png', title: 'Работа 4' },
+        { id: 5, src: '/gallery/IMG_7232 1.png', title: 'Работа 5' },
+        { id: 6, src: '/gallery/IMG_7234 1.png', title: 'Работа 6' },
+        { id: 7, src: '/gallery/IMG_7240 1.png', title: 'Работа 7' },
+        { id: 8, src: '/gallery/IMG_7255 1.png', title: 'Работа 8' },
+        { id: 9, src: '/gallery/IMG_7305 1.png', title: 'Работа 9' },
+        { id: 10, src: '/gallery/IMG_7376 1.png', title: 'Работа 10' },
+        { id: 11, src: '/gallery/IMG_7401 1.png', title: 'Работа 11' },
+        { id: 12, src: '/gallery/IMG_7402 1.png', title: 'Работа 12' },
+        { id: 13, src: '/gallery/IMG_7583 1.png', title: 'Работа 13' },
+        { id: 14, src: '/gallery/IMG_7585 1.png', title: 'Работа 14' },
+        { id: 15, src: '/gallery/IMG_7588 1.png', title: 'Работа 15' },
+        { id: 16, src: '/gallery/IMG_7624 1.png', title: 'Работа 16' },
+        { id: 17, src: '/gallery/IMG_7885 1.png', title: 'Работа 17' },
+        { id: 18, src: '/gallery/IMG_7886 1.png', title: 'Работа 18' },
+        { id: 19, src: '/gallery/IMG_7893 1.png', title: 'Работа 19' },
+        { id: 20, src: '/gallery/IMG_7893 2.png', title: 'Работа 20' },
+        { id: 21, src: '/gallery/IMG_7228 1.png', title: 'Работа 21' },
+        { id: 22, src: '/gallery/IMG_6728 1.png', title: 'Работа 22' },
+        { id: 23, src: '/gallery/IMG_6532 1.png', title: 'Работа 23' },
+        { id: 24, src: 'gallery/IMG_6484 1.png', title: 'Работа 24' },
     ];
-
     const PhoneIcon = () => (
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
@@ -132,9 +143,6 @@ export default function Gallery() {
                             onClick={() => setSelectedImage(item.src)}
                         >
                             <img src={item.src} alt={item.title} />
-                            <div className={styles.galleryOverlay}>
-                                <span className={styles.galleryTitle}>{item.title}</span>
-                            </div>
                         </div>
                     ))}
                 </div>

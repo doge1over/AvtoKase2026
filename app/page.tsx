@@ -64,10 +64,10 @@ export default function Home() {
     ];
 
     const galleryImages = [
-        'https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=600',
-        'https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=600',
-        'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600',
-        'https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?w=600',
+        '/gallery/IMG_8192 1.png',
+        '/gallery/IMG_8311 1.png',
+        '/gallery/IMG_7893 2.png',
+        '/gallery/IMG_7255 1.png',
     ];
 
     const PhoneIcon = () => (

@@ -5,7 +5,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="142ff275-c47c-46ab-9f4a-e367dc51fc6e" name="Changes" comment="1">
+      <change afterPath="$PROJECT_DIR$/public/gallery/IMG_6484 1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/gallery/IMG_6532 1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/gallery/IMG_6728 1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/gallery/IMG_7228 1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/gallery/IMG_72311 1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/gallery/IMG_7232 1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/gallery/IMG_72331 1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/gallery/IMG_7234 1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/gallery/IMG_7240 1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/gallery/IMG_7255 1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/gallery/IMG_7305 1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/gallery/IMG_7376 1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/gallery/IMG_7401 1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/gallery/IMG_7402 1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/gallery/IMG_7583 1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/gallery/IMG_7585 1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/gallery/IMG_7588 1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/gallery/IMG_7624 1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/gallery/IMG_7885 1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/gallery/IMG_7886 1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/gallery/IMG_7893 1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/gallery/IMG_7893 2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/gallery/IMG_8192 1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/gallery/IMG_8311 1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/gallery/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/gallery/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/file.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/globe.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/next.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/vercel.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/window.svg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,18 +53,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "doge1over"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;doge1over&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/doge1over/AvtoKase2026.git",
-    "accountId": "dd2c63e4-32f7-4215-bc0e-6b864c429736"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/doge1over/AvtoKase2026.git&quot;,
+    &quot;accountId&quot;: &quot;dd2c63e4-32f7-4215-bc0e-6b864c429736&quot;
   }
-}]]></component>
+}</component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -56,6 +86,7 @@
     "git-widget-placeholder": "master",
     "js.debugger.nextJs.config.created.client": "true",
     "js.debugger.nextJs.config.created.server": "true",
+    "last_opened_file_path": "D:/AvtoKase2026/public/gallery",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -69,6 +100,9 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\AvtoKase2026\public\gallery" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\AvtoKase2026\app" />
     </key>
@@ -104,6 +138,7 @@
       <updated>1770300198268</updated>
       <workItem from="1770300199306" duration="2123000" />
       <workItem from="1770410721610" duration="2643000" />
+      <workItem from="1770588191710" duration="611000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <option name="closed" value="true" />
