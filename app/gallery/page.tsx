@@ -2,16 +2,17 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import styles from './gallery.module.css';
 
 export default function Gallery() {
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
     const galleryItems = [
-        { id: 1, src: '/gallery/IMG_8192 1.png', title: 'Работа 1' },
-        { id: 2, src: '/gallery/IMG_8311 1.png', title: 'Работа 2' },
-        { id: 3, src: '/gallery/IMG_72311 1.png', title: 'Работа 3' },
-        { id: 4, src: '/gallery/IMG_72331 1.png', title: 'Работа 4' },
+        { id: 1, src: '/gallery/IMG_6484 1.png', title: 'Работа 1' },
+        { id: 2, src: '/gallery/IMG_6532 1.png', title: 'Работа 2' },
+        { id: 3, src: '/gallery/IMG_6728 1.png', title: 'Работа 3' },
+        { id: 4, src: '/gallery/IMG_7228 1.png', title: 'Работа 4' },
         { id: 5, src: '/gallery/IMG_7232 1.png', title: 'Работа 5' },
         { id: 6, src: '/gallery/IMG_7234 1.png', title: 'Работа 6' },
         { id: 7, src: '/gallery/IMG_7240 1.png', title: 'Работа 7' },
@@ -28,11 +29,12 @@ export default function Gallery() {
         { id: 18, src: '/gallery/IMG_7886 1.png', title: 'Работа 18' },
         { id: 19, src: '/gallery/IMG_7893 1.png', title: 'Работа 19' },
         { id: 20, src: '/gallery/IMG_7893 2.png', title: 'Работа 20' },
-        { id: 21, src: '/gallery/IMG_7228 1.png', title: 'Работа 21' },
-        { id: 22, src: '/gallery/IMG_6728 1.png', title: 'Работа 22' },
-        { id: 23, src: '/gallery/IMG_6532 1.png', title: 'Работа 23' },
-        { id: 24, src: 'gallery/IMG_6484 1.png', title: 'Работа 24' },
+        { id: 21, src: '/gallery/IMG_8192 1.png', title: 'Работа 21' },
+        { id: 22, src: '/gallery/IMG_8311 1.png', title: 'Работа 22' },
+        { id: 23, src: '/gallery/IMG_72311 1.png', title: 'Работа 23' },
+        { id: 24, src: '/gallery/IMG_72331 1.png', title: 'Работа 24' },
     ];
+
     const PhoneIcon = () => (
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
@@ -142,7 +144,16 @@ export default function Gallery() {
                             className={styles.galleryItem}
                             onClick={() => setSelectedImage(item.src)}
                         >
-                            <img src={item.src} alt={item.title} />
+                            <Image
+                                src={item.src}
+                                alt={item.title}
+                                width={400}
+                                height={400}
+                                quality={75}
+                                loading="lazy"
+                                placeholder="blur"
+                                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAUH/8QAIhAAAgEDBAMBAAAAAAAAAAAAAQIDAAQRBQYSIRMxQVH/xAAVAQEBAAAAAAAAAAAAAAAAAAADBP/EABkRAAIDAQAAAAAAAAAAAAAAAAECABEhA//aAAwDAQACEQMRAD8AzoW9tLcwyXEaySwqVR2UEoCckA/BnvFVNO2/ptvbRxrYWrBVC5khViT9JJG5P0mlKECnsU9LbZ//2Q=="
+                            />
                         </div>
                     ))}
                 </div>
@@ -154,7 +165,15 @@ export default function Gallery() {
                     <button className={styles.lightboxClose} onClick={() => setSelectedImage(null)}>
                         <CloseIcon />
                     </button>
-                    <img src={selectedImage} alt="Gallery" onClick={(e) => e.stopPropagation()} />
+                    <Image
+                        src={selectedImage}
+                        alt="Gallery"
+                        width={1200}
+                        height={1200}
+                        quality={90}
+                        onClick={(e) => e.stopPropagation()}
+                        style={{ objectFit: 'contain', maxWidth: '90vw', maxHeight: '90vh', width: 'auto', height: 'auto' }}
+                    />
                 </div>
             )}
 

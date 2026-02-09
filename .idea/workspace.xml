@@ -4,38 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="142ff275-c47c-46ab-9f4a-e367dc51fc6e" name="Changes" comment="1">
-      <change afterPath="$PROJECT_DIR$/public/gallery/IMG_6484 1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/gallery/IMG_6532 1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/gallery/IMG_6728 1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/gallery/IMG_7228 1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/gallery/IMG_72311 1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/gallery/IMG_7232 1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/gallery/IMG_72331 1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/gallery/IMG_7234 1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/gallery/IMG_7240 1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/gallery/IMG_7255 1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/gallery/IMG_7305 1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/gallery/IMG_7376 1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/gallery/IMG_7401 1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/gallery/IMG_7402 1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/gallery/IMG_7583 1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/gallery/IMG_7585 1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/gallery/IMG_7588 1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/gallery/IMG_7624 1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/gallery/IMG_7885 1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/gallery/IMG_7886 1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/gallery/IMG_7893 1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/gallery/IMG_7893 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/gallery/IMG_8192 1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/gallery/IMG_8311 1.png" afterDir="false" />
+    <list default="true" id="142ff275-c47c-46ab-9f4a-e367dc51fc6e" name="Changes" comment="2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/gallery/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/gallery/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/file.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/globe.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/next.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/vercel.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/window.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +109,7 @@
       <updated>1770300198268</updated>
       <workItem from="1770300199306" duration="2123000" />
       <workItem from="1770410721610" duration="2643000" />
-      <workItem from="1770588191710" duration="611000" />
+      <workItem from="1770588191710" duration="1783000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <option name="closed" value="true" />
@@ -148,7 +119,15 @@
       <option name="project" value="LOCAL" />
       <updated>1770412785077</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="2">
+      <option name="closed" value="true" />
+      <created>1770597163163</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1770597163163</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -162,6 +141,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1" />
-    <option name="LAST_COMMIT_MESSAGE" value="1" />
+    <MESSAGE value="2" />
+    <option name="LAST_COMMIT_MESSAGE" value="2" />
   </component>
 </project>
