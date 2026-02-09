@@ -123,8 +123,8 @@ export default function Home() {
     const renderStars = (rating: number) => {
         return Array.from({ length: 5 }, (_, i) => (
             <span key={i} className={i < rating ? styles.starFilled : styles.starEmpty}>
-        <StarIcon filled={i < rating} />
-      </span>
+                <StarIcon filled={i < rating} />
+            </span>
         ));
     };
 
@@ -164,9 +164,9 @@ export default function Home() {
                             +7 (911) 014-17-51
                         </a>
                     </div>
-                    <button className={styles.btnPrimary}>
+                    <a href="tel:+79110141751" className={styles.btnPrimary}>
                         <PhoneIcon /> ЗАПИСАТЬСЯ
-                    </button>
+                    </a>
                 </div>
             </header>
 
@@ -177,7 +177,7 @@ export default function Home() {
 
                 <div className={styles.heroContent}>
                     <div className={`${styles.heroLocation} ${isVisible ? styles.animateSlideIn : ''}`}>
-                        <MapPinIcon /> ТОКСОВО • ЛЕН. ОБЛАСТЬ
+                        <MapPinIcon /> ТОКСОВО • ЛЕН. ОБЛАСТЬ • Ленинградское ш. 13А
                     </div>
 
                     <h1 className={`${styles.heroTitle} ${isVisible ? styles.animateSlideUp : ''}`}>
@@ -191,9 +191,9 @@ export default function Home() {
                     </p>
 
                     <div className={`${styles.heroButtons} ${isVisible ? styles.animateSlideUp : ''}`}>
-                        <button className={styles.btnPrimary}>
+                        <a href="tel:+79110141751" className={styles.btnPrimary}>
                             ЗАПИСАТЬСЯ НА СЕРВИС <ArrowRightIcon />
-                        </button>
+                        </a>
                         <Link href="/gallery" className={styles.btnSecondary}>
                             НАШИ РАБОТЫ
                         </Link>
@@ -422,7 +422,7 @@ export default function Home() {
                     <div className={styles.mapCardItem}>
                         <PhoneIcon /> +7 (911) 014-17-51
                     </div>
-                    <a href="https://yandex.ru/maps/-/CDT5vB~H" target="_blank" rel="noopener noreferrer" className={styles.btnPrimary}>
+                    <a href="https://yandex.ru/maps/org/avtokeys/56867349266/?ll=30.527862%2C60.137273&z=17" target="_blank" rel="noopener noreferrer" className={styles.btnPrimary}>
                         ПОСТРОИТЬ МАРШРУТ <ArrowRightIcon />
                     </a>
                 </div>
@@ -432,7 +432,7 @@ export default function Home() {
             <footer className={styles.footer}>
                 <div className={styles.footerGrid}>
                     <div>
-                        <Link href="/" className={styles.logo} style={{ marginBottom: '24px' }}>
+                        <Link href="/" className={styles.logo}>
                             <div className={styles.logoIcon}>АК</div>
                             <div>
                                 <div className={styles.logoTitle}>АВТОКЕЙС</div>

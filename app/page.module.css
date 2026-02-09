@@ -57,7 +57,7 @@
 .logo {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 12px;
     text-decoration: none;
     color: inherit;
 }
@@ -72,6 +72,7 @@
     font-family: 'Unbounded', sans-serif;
     font-weight: 900;
     font-size: 20px;
+    flex-shrink: 0;
 }
 
 .logoTitle {
@@ -166,7 +167,9 @@
     text-decoration: none;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 10px;
+    text-align: center;
 }
 
 .btnPrimary:hover {
@@ -177,16 +180,19 @@
 .btnSecondary {
     background: transparent;
     border: 2px solid #333;
-    padding: 20px 32px;
+    padding: 16px 32px;
     color: #fff;
     font-family: 'Unbounded', sans-serif;
     font-weight: 500;
+    font-size: 14px;
     cursor: pointer;
     transition: all 0.3s ease;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 10px;
     text-decoration: none;
+    text-align: center;
 }
 
 .btnSecondary:hover {
@@ -199,6 +205,7 @@
     min-height: 100vh;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     position: relative;
     padding: 120px 60px 60px;
     overflow: hidden;
@@ -225,7 +232,7 @@
 }
 
 .heroContent {
-    max-width: 800px;
+    max-width: 600px;
     z-index: 10;
 }
 
@@ -233,18 +240,19 @@
     color: #b62426;
     font-weight: 600;
     font-size: 14px;
-    letter-spacing: 6px;
+    letter-spacing: 4px;
     margin-bottom: 24px;
     opacity: 0;
     animation-delay: 0.2s;
     display: flex;
     align-items: center;
     gap: 8px;
+    flex-wrap: wrap;
 }
 
 .heroTitle {
     font-family: 'Unbounded', sans-serif;
-    font-size: clamp(48px, 8vw, 96px);
+    font-size: clamp(48px, 10vw, 96px);
     font-weight: 900;
     line-height: 1;
     margin-bottom: 32px;
@@ -272,6 +280,7 @@
     gap: 20px;
     opacity: 0;
     animation-delay: 0.8s;
+    flex-wrap: wrap;
 }
 
 .heroStats {
@@ -280,6 +289,7 @@
     bottom: 60px;
     display: flex;
     gap: 60px;
+    z-index: 10;
 }
 
 .statItem {
@@ -328,7 +338,7 @@
 }
 
 .sectionHeader {
-    margin-bottom: 80px;
+    margin-bottom: 60px;
 }
 
 .sectionLabel {
@@ -342,7 +352,7 @@
 
 .sectionTitle {
     font-family: 'Unbounded', sans-serif;
-    font-size: clamp(32px, 5vw, 56px);
+    font-size: clamp(28px, 5vw, 56px);
     font-weight: 800;
 }
 
@@ -361,7 +371,7 @@
     background: linear-gradient(145deg, rgba(40,40,40,0.8) 0%, rgba(20,20,20,0.9) 100%);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(182, 36, 38, 0.2);
-    padding: 32px;
+    padding: 24px;
     margin-bottom: 16px;
     cursor: pointer;
     transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
@@ -398,14 +408,15 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    gap: 16px;
 }
 
 .serviceNum {
     font-family: 'Unbounded', sans-serif;
-    font-size: 48px;
+    font-size: 36px;
     font-weight: 800;
     color: #333;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
     transition: color 0.3s ease;
 }
 
@@ -415,7 +426,7 @@
 
 .serviceTitle {
     font-family: 'Unbounded', sans-serif;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
     margin-bottom: 8px;
 }
@@ -428,18 +439,19 @@
 .servicePrice {
     color: #b62426;
     font-weight: 700;
-    font-size: 18px;
+    font-size: 16px;
     font-family: 'Unbounded', sans-serif;
+    white-space: nowrap;
 }
 
 .featureCard {
     flex: 0 0 400px;
     background: linear-gradient(135deg, #b62426 0%, #8a1c1e 100%);
-    padding: 48px;
+    padding: 40px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 500px;
+    min-height: 400px;
 }
 
 .featureIcon {
@@ -449,7 +461,7 @@
 
 .featureTitle {
     font-family: 'Unbounded', sans-serif;
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 700;
     margin-bottom: 16px;
 }
@@ -464,6 +476,7 @@
     font-size: 12px;
     letter-spacing: 3px;
     opacity: 0.7;
+    margin-top: 24px;
 }
 
 /* === PRICE SECTION === */
@@ -480,7 +493,7 @@
 .priceGrid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 80px;
+    gap: 60px;
     align-items: start;
 }
 
@@ -498,6 +511,7 @@
     padding: 16px 24px;
     border: 1px solid rgba(182,36,38,0.3);
     font-size: 14px;
+    flex-wrap: wrap;
 }
 
 .freeTag strong {
@@ -507,14 +521,15 @@
 .priceRow {
     display: flex;
     justify-content: space-between;
-    padding: 20px 0;
+    padding: 16px 0;
     border-bottom: 1px solid rgba(255,255,255,0.05);
     transition: all 0.3s ease;
+    gap: 16px;
 }
 
 .priceRow:hover {
     background: rgba(182, 36, 38, 0.1);
-    padding-left: 20px;
+    padding-left: 16px;
 }
 
 .priceService {
@@ -525,6 +540,7 @@
     color: #b62426;
     font-weight: 600;
     font-family: 'Unbounded', sans-serif;
+    white-space: nowrap;
 }
 
 /* === REVIEWS SECTION === */
@@ -573,7 +589,7 @@
 
 .ratingNumber {
     font-family: 'Unbounded', sans-serif;
-    font-size: 64px;
+    font-size: 56px;
     font-weight: 800;
     color: #fff;
     line-height: 1;
@@ -609,7 +625,7 @@
 .reviewCard {
     background: linear-gradient(145deg, rgba(40,40,40,0.6) 0%, rgba(20,20,20,0.8) 100%);
     border: 1px solid rgba(255,255,255,0.05);
-    padding: 32px;
+    padding: 28px;
     transition: all 0.3s ease;
 }
 
@@ -623,6 +639,7 @@
     align-items: center;
     gap: 16px;
     margin-bottom: 16px;
+    flex-wrap: wrap;
 }
 
 .reviewAvatar {
@@ -636,10 +653,12 @@
     font-family: 'Unbounded', sans-serif;
     font-weight: 700;
     font-size: 18px;
+    flex-shrink: 0;
 }
 
 .reviewInfo {
     flex: 1;
+    min-width: 120px;
 }
 
 .reviewName {
@@ -682,7 +701,7 @@
 .galleryHeader {
     text-align: center;
     margin-bottom: 60px;
-    padding: 0 60px;
+    padding: 0 40px;
 }
 
 .galleryGrid {
@@ -724,7 +743,7 @@
 
 .galleryCta {
     text-align: center;
-    padding: 60px 60px 0;
+    padding: 60px 40px 0;
 }
 
 /* === CTA SECTION === */
@@ -754,13 +773,13 @@
 
 .ctaTitle {
     font-family: 'Unbounded', sans-serif;
-    font-size: clamp(36px, 5vw, 64px);
+    font-size: clamp(28px, 5vw, 56px);
     font-weight: 800;
     margin-bottom: 24px;
 }
 
 .ctaDesc {
-    font-size: 20px;
+    font-size: 18px;
     opacity: 0.9;
     max-width: 500px;
     margin: 0 auto 48px;
@@ -776,10 +795,10 @@
 .ctaBtnWhite {
     background: #fff;
     color: #b62426;
-    padding: 20px 48px;
+    padding: 20px 40px;
     font-family: 'Unbounded', sans-serif;
     font-weight: 700;
-    font-size: 18px;
+    font-size: 16px;
     text-decoration: none;
     transition: transform 0.3s ease;
     display: inline-flex;
@@ -795,7 +814,7 @@
     background: transparent;
     border: 2px solid rgba(255,255,255,0.5);
     color: #fff;
-    padding: 20px 48px;
+    padding: 20px 40px;
     font-family: 'Unbounded', sans-serif;
     font-weight: 600;
     text-decoration: none;
@@ -825,13 +844,13 @@
     left: 60px;
     transform: translateY(-50%);
     background: #0a0a0a;
-    padding: 48px;
-    max-width: 400px;
+    padding: 40px;
+    max-width: 380px;
 }
 
 .mapCardTitle {
     font-family: 'Unbounded', sans-serif;
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 700;
     margin-bottom: 24px;
 }
@@ -855,7 +874,7 @@
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 60px;
+    gap: 40px;
     margin-bottom: 60px;
 }
 
@@ -863,6 +882,7 @@
     color: #666;
     font-size: 14px;
     line-height: 1.8;
+    margin-top: 24px;
 }
 
 .footerTitle {
@@ -921,6 +941,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .copyright {
@@ -951,16 +973,110 @@
     font-family: 'Unbounded', sans-serif;
 }
 
-/* === RESPONSIVE === */
-@media (max-width: 1024px) {
+/* ============================================
+   RESPONSIVE - DESKTOP (1200px+)
+   ============================================ */
+@media (min-width: 1200px) {
+    .heroStats {
+        position: absolute;
+        right: 60px;
+        bottom: 60px;
+    }
+}
+
+/* ============================================
+   RESPONSIVE - LAPTOP (1024px - 1199px)
+   ============================================ */
+@media (max-width: 1199px) {
+    .header {
+        padding: 20px 30px;
+    }
+
     .nav {
-        display: none;
+        gap: 24px;
+    }
+
+    .navLink {
+        font-size: 12px;
+    }
+
+    .hero {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 120px 40px 60px;
     }
 
     .heroStats {
         position: static;
         margin-top: 60px;
-        justify-content: flex-start;
+    }
+
+    .services {
+        padding: 100px 40px;
+    }
+
+    .priceSection {
+        padding: 100px 40px;
+    }
+
+    .reviewsSection {
+        padding: 100px 40px;
+    }
+
+    .cta {
+        padding: 100px 40px;
+    }
+
+    .footer {
+        padding: 60px 40px 40px;
+    }
+}
+
+/* ============================================
+   RESPONSIVE - TABLET (768px - 1023px)
+   ============================================ */
+@media (max-width: 1023px) {
+    .nav {
+        display: none;
+    }
+
+    .headerRight {
+        gap: 16px;
+    }
+
+    .headerContact {
+        display: none;
+    }
+
+    .hero {
+        padding: 100px 30px 50px;
+        min-height: auto;
+    }
+
+    .heroTitle {
+        font-size: clamp(40px, 12vw, 72px);
+    }
+
+    .heroDesc {
+        font-size: 16px;
+        margin-bottom: 32px;
+    }
+
+    .heroStats {
+        gap: 40px;
+    }
+
+    .statNum {
+        font-size: 40px;
+    }
+
+    .services {
+        padding: 80px 30px;
+    }
+
+    .servicesBigNum {
+        font-size: 120px;
+        left: 30px;
     }
 
     .servicesGrid {
@@ -972,61 +1088,37 @@
         min-height: auto;
     }
 
+    .priceSection {
+        padding: 80px 30px;
+    }
+
     .priceGrid {
         grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .reviewsSection {
+        padding: 80px 30px;
     }
 
     .reviewsGrid {
         grid-template-columns: 1fr;
     }
 
-    .galleryGrid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .footerGrid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    .header {
-        padding: 15px 20px;
-    }
-
-    .headerRight {
-        display: none;
-    }
-
-    .hero {
-        padding: 100px 20px 40px;
-    }
-
-    .heroButtons {
-        flex-direction: column;
-    }
-
-    .services,
-    .priceSection,
-    .reviewsSection,
-    .cta {
-        padding: 60px 20px;
-    }
-
-    .servicesBigNum {
-        display: none;
-    }
-
-    .reviewsHeader {
-        flex-direction: column;
-    }
-
     .yandexRating {
         width: 100%;
     }
 
-    .galleryCta {
-        padding: 40px 20px 0;
+    .gallery {
+        padding: 80px 0 40px;
+    }
+
+    .galleryGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cta {
+        padding: 80px 30px;
     }
 
     .mapCard {
@@ -1035,18 +1127,420 @@
         max-width: 100%;
     }
 
+    .map {
+        height: 350px;
+    }
+
+    .footer {
+        padding: 60px 30px 30px;
+    }
+
+    .footerGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+}
+
+/* ============================================
+   RESPONSIVE - MOBILE LARGE (480px - 767px)
+   ============================================ */
+@media (max-width: 767px) {
+    .header {
+        padding: 15px 20px;
+    }
+
+    .logoIcon {
+        width: 44px;
+        height: 44px;
+        font-size: 18px;
+    }
+
+    .logoTitle {
+        font-size: 16px;
+    }
+
+    .headerRight {
+        display: flex;
+    }
+
+    .btnPrimary {
+        padding: 12px 20px;
+        font-size: 12px;
+    }
+
+    .hero {
+        padding: 90px 20px 40px;
+    }
+
+    .heroLocation {
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+    .heroTitle {
+        font-size: clamp(36px, 14vw, 56px);
+        margin-bottom: 24px;
+    }
+
+    .heroDesc {
+        font-size: 15px;
+        line-height: 1.7;
+        margin-bottom: 28px;
+    }
+
+    .heroButtons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .heroButtons .btnPrimary,
+    .heroButtons .btnSecondary {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .heroStats {
+        width: 100%;
+        justify-content: space-between;
+        gap: 20px;
+        margin-top: 48px;
+    }
+
+    .statNum {
+        font-size: 32px;
+    }
+
+    .statLabel {
+        font-size: 10px;
+    }
+
+    .services {
+        padding: 60px 20px;
+    }
+
+    .servicesBigNum {
+        display: none;
+    }
+
+    .sectionHeader {
+        margin-bottom: 40px;
+    }
+
+    .serviceCard {
+        padding: 20px;
+    }
+
+    .serviceNum {
+        font-size: 28px;
+    }
+
+    .serviceTitle {
+        font-size: 16px;
+    }
+
+    .servicePrice {
+        font-size: 14px;
+    }
+
+    .featureCard {
+        padding: 32px;
+    }
+
+    .featureTitle {
+        font-size: 20px;
+    }
+
+    .priceSection {
+        padding: 60px 20px;
+    }
+
+    .priceRow {
+        flex-direction: column;
+        gap: 8px;
+        padding: 16px 0;
+    }
+
+    .reviewsSection {
+        padding: 60px 20px;
+    }
+
+    .reviewsHeader {
+        gap: 30px;
+    }
+
+    .yandexRating {
+        padding: 24px;
+    }
+
+    .ratingNumber {
+        font-size: 48px;
+    }
+
+    .reviewCard {
+        padding: 24px;
+    }
+
+    .gallery {
+        padding: 60px 0 30px;
+    }
+
+    .galleryHeader {
+        padding: 0 20px;
+        margin-bottom: 40px;
+    }
+
+    .galleryCta {
+        padding: 40px 20px 0;
+    }
+
+    .cta {
+        padding: 60px 20px;
+    }
+
+    .ctaDesc {
+        font-size: 16px;
+    }
+
+    .ctaBtnWhite,
+    .ctaBtnOutline {
+        padding: 16px 32px;
+        font-size: 14px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .ctaButtons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .mapCard {
+        padding: 30px 20px;
+    }
+
+    .mapCardTitle {
+        font-size: 20px;
+    }
+
+    .footer {
+        padding: 50px 20px 30px;
+    }
+
     .footerGrid {
         grid-template-columns: 1fr;
+        gap: 40px;
     }
 
     .footerBottom {
         flex-direction: column;
-        gap: 20px;
         text-align: center;
     }
 
     .footerRating {
         flex-wrap: wrap;
         justify-content: center;
+    }
+}
+
+/* ============================================
+   RESPONSIVE - MOBILE SMALL (до 479px)
+   ============================================ */
+@media (max-width: 479px) {
+    .header {
+        padding: 12px 16px;
+    }
+
+    .logo {
+        gap: 10px;
+    }
+
+    .logoIcon {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .logoTitle {
+        font-size: 14px;
+        letter-spacing: 1px;
+    }
+
+    .logoSubtitle {
+        font-size: 8px;
+        letter-spacing: 2px;
+    }
+
+    .btnPrimary {
+        padding: 10px 16px;
+        font-size: 11px;
+        gap: 6px;
+    }
+
+    .hero {
+        padding: 80px 16px 32px;
+    }
+
+    .heroLocation {
+        font-size: 10px;
+        letter-spacing: 1px;
+        margin-bottom: 16px;
+    }
+
+    .heroTitle {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+    .heroDesc {
+        font-size: 14px;
+        margin-bottom: 24px;
+    }
+
+    .heroStats {
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .statItem {
+        flex: 1;
+        min-width: 80px;
+    }
+
+    .statNum {
+        font-size: 28px;
+    }
+
+    .services {
+        padding: 50px 16px;
+    }
+
+    .sectionTitle {
+        font-size: 24px;
+    }
+
+    .serviceCard {
+        padding: 16px;
+    }
+
+    .serviceCardContent {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .serviceNum {
+        font-size: 24px;
+        margin-bottom: 8px;
+    }
+
+    .featureCard {
+        padding: 24px;
+        min-height: auto;
+    }
+
+    .featureTitle {
+        font-size: 18px;
+    }
+
+    .featureDesc {
+        font-size: 14px;
+    }
+
+    .priceSection {
+        padding: 50px 16px;
+    }
+
+    .freeTag {
+        padding: 12px 16px;
+        font-size: 13px;
+    }
+
+    .reviewsSection {
+        padding: 50px 16px;
+    }
+
+    .reviewCard {
+        padding: 20px;
+    }
+
+    .reviewHeader {
+        gap: 12px;
+    }
+
+    .reviewAvatar {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .reviewName {
+        font-size: 14px;
+    }
+
+    .reviewText {
+        font-size: 14px;
+    }
+
+    .gallery {
+        padding: 50px 0 24px;
+    }
+
+    .galleryHeader {
+        padding: 0 16px;
+        margin-bottom: 30px;
+    }
+
+    .galleryCta {
+        padding: 30px 16px 0;
+    }
+
+    .galleryCta .btnPrimary {
+        width: 100%;
+    }
+
+    .cta {
+        padding: 50px 16px;
+    }
+
+    .ctaTitle {
+        font-size: 24px;
+    }
+
+    .map {
+        height: 300px;
+    }
+
+    .mapCard {
+        padding: 24px 16px;
+    }
+
+    .mapCardTitle {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .mapCard .btnPrimary {
+        width: 100%;
+        margin-top: 8px;
+    }
+
+    .footer {
+        padding: 40px 16px 24px;
+    }
+
+    .footerGrid {
+        gap: 32px;
+    }
+
+    .footerTitle {
+        font-size: 12px;
+        margin-bottom: 16px;
+    }
+
+    .footerBottom {
+        padding-top: 24px;
+    }
+
+    .copyright {
+        font-size: 12px;
     }
 }
