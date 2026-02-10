@@ -79,11 +79,13 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\AvtoKase2026\components" />
+      <recent name="D:\AvtoKase2026" />
       <recent name="D:\AvtoKase2026\public\gallery" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\AvtoKase2026\public" />
       <recent name="D:\AvtoKase2026\app" />
+      <recent name="D:\AvtoKase2026\public" />
     </key>
   </component>
   <component name="RunManager" selected="npm.Next.js: server-side">
