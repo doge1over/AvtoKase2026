@@ -1,6 +1,6 @@
 /* === BASE STYLES === */
 .wrapper {
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--font-montserrat), 'Montserrat', sans-serif;
     background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
     min-height: 100vh;
     color: #ffffff;
@@ -36,13 +36,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Unbounded', sans-serif;
+    font-family: var(--font-unbounded), 'Unbounded', sans-serif;
     font-weight: 900;
     font-size: 20px;
 }
 
 .logoTitle {
-    font-family: 'Unbounded', sans-serif;
+    font-family: var(--font-unbounded), 'Unbounded', sans-serif;
     font-weight: 700;
     font-size: 18px;
     letter-spacing: 2px;
@@ -130,7 +130,7 @@
     border: none;
     padding: 16px 32px;
     color: white;
-    font-family: 'Unbounded', sans-serif;
+    font-family: var(--font-unbounded), 'Unbounded', sans-serif;
     font-weight: 600;
     font-size: 14px;
     letter-spacing: 1px;
@@ -152,7 +152,7 @@
     border: 2px solid #333;
     padding: 16px 32px;
     color: #fff;
-    font-family: 'Unbounded', sans-serif;
+    font-family: var(--font-unbounded), 'Unbounded', sans-serif;
     font-weight: 500;
     font-size: 14px;
     letter-spacing: 1px;
@@ -191,7 +191,7 @@
 }
 
 .pageTitle {
-    font-family: 'Unbounded', sans-serif;
+    font-family: var(--font-unbounded), 'Unbounded', sans-serif;
     font-size: clamp(36px, 6vw, 64px);
     font-weight: 800;
     margin-bottom: 16px;
@@ -252,7 +252,7 @@
 }
 
 .galleryTitle {
-    font-family: 'Unbounded', sans-serif;
+    font-family: var(--font-unbounded), 'Unbounded', sans-serif;
     font-size: 14px;
     font-weight: 600;
 }
@@ -301,7 +301,7 @@
 }
 
 .ctaTitle {
-    font-family: 'Unbounded', sans-serif;
+    font-family: var(--font-unbounded), 'Unbounded', sans-serif;
     font-size: clamp(24px, 4vw, 40px);
     font-weight: 700;
     margin-bottom: 12px;
@@ -325,7 +325,7 @@
     border: none;
     padding: 20px 48px;
     color: #b62426;
-    font-family: 'Unbounded', sans-serif;
+    font-family: var(--font-unbounded), 'Unbounded', sans-serif;
     font-weight: 700;
     font-size: 18px;
     letter-spacing: 1px;
@@ -347,7 +347,7 @@
     border: 2px solid rgba(255,255,255,0.4);
     padding: 14px 28px;
     color: #fff;
-    font-family: 'Unbounded', sans-serif;
+    font-family: var(--font-unbounded), 'Unbounded', sans-serif;
     font-weight: 500;
     font-size: 13px;
     letter-spacing: 1px;
@@ -386,7 +386,7 @@
 }
 
 .footerTitle {
-    font-family: 'Unbounded', sans-serif;
+    font-family: var(--font-unbounded), 'Unbounded', sans-serif;
     font-size: 14px;
     margin-bottom: 24px;
     color: #b62426;

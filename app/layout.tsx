@@ -1,5 +1,20 @@
 import type { Metadata } from "next";
+import { Unbounded, Montserrat } from "next/font/google";
 import "./globals.css";
+
+const unbounded = Unbounded({
+    subsets: ['cyrillic', 'latin'],
+    weight: ['200', '300', '400', '500', '600', '700', '800', '900'],
+    display: 'swap',
+    variable: '--font-unbounded',
+});
+
+const montserrat = Montserrat({
+    subsets: ['cyrillic', 'latin'],
+    weight: ['300', '400', '500', '600', '700'],
+    display: 'swap',
+    variable: '--font-montserrat',
+});
 
 export const metadata: Metadata = {
     // Основные мета-теги
@@ -287,7 +302,7 @@ export default function RootLayout({
     };
 
     return (
-        <html lang="ru">
+        <html lang="ru" className={`${unbounded.variable} ${montserrat.variable}`}>
         <head>
             {/* JSON-LD структурированные данные */}
             <script
@@ -313,9 +328,6 @@ export default function RootLayout({
             <link rel="icon" href="/favicon.ico" />
             <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
-            {/* Preconnect для ускорения загрузки */}
-            <link rel="preconnect" href="https://fonts.googleapis.com" />
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         </head>
         <body>{children}</body>
         </html>

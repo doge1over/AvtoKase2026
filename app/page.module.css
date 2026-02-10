@@ -1,6 +1,6 @@
 /* === BASE STYLES === */
 .wrapper {
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--font-montserrat), 'Montserrat', sans-serif;
     background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
     min-height: 100vh;
     color: #ffffff;
@@ -69,14 +69,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Unbounded', sans-serif;
+    font-family: var(--font-unbounded), 'Unbounded', sans-serif;
     font-weight: 900;
     font-size: 20px;
     flex-shrink: 0;
 }
 
 .logoTitle {
-    font-family: 'Unbounded', sans-serif;
+    font-family: var(--font-unbounded), 'Unbounded', sans-serif;
     font-weight: 700;
     font-size: 18px;
     letter-spacing: 2px;
@@ -156,7 +156,7 @@
     border: none;
     padding: 16px 32px;
     color: white;
-    font-family: 'Unbounded', sans-serif;
+    font-family: var(--font-unbounded), 'Unbounded', sans-serif;
     font-weight: 600;
     font-size: 14px;
     letter-spacing: 1px;
@@ -182,7 +182,7 @@
     border: 2px solid #333;
     padding: 16px 32px;
     color: #fff;
-    font-family: 'Unbounded', sans-serif;
+    font-family: var(--font-unbounded), 'Unbounded', sans-serif;
     font-weight: 500;
     font-size: 14px;
     cursor: pointer;
@@ -251,7 +251,7 @@
 }
 
 .heroTitle {
-    font-family: 'Unbounded', sans-serif;
+    font-family: var(--font-unbounded), 'Unbounded', sans-serif;
     font-size: clamp(48px, 10vw, 96px);
     font-weight: 900;
     line-height: 1;
@@ -265,7 +265,7 @@
 }
 
 .heroDesc {
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--font-montserrat), 'Montserrat', sans-serif;
     font-size: 18px;
     color: #888;
     line-height: 1.8;
@@ -302,7 +302,7 @@
 .statItem:nth-child(3) { animation-delay: 1.4s; }
 
 .statNum {
-    font-family: 'Unbounded', sans-serif;
+    font-family: var(--font-unbounded), 'Unbounded', sans-serif;
     font-size: 48px;
     font-weight: 800;
     color: #b62426;
@@ -325,7 +325,7 @@
     left: 60px;
     top: 120px;
     color: rgba(182,36,38,0.1);
-    font-family: 'Unbounded', sans-serif;
+    font-family: var(--font-unbounded), 'Unbounded', sans-serif;
     font-size: 200px;
     font-weight: 900;
     line-height: 1;
@@ -342,7 +342,7 @@
 }
 
 .sectionLabel {
-    font-family: 'Unbounded', sans-serif;
+    font-family: var(--font-unbounded), 'Unbounded', sans-serif;
     font-size: 12px;
     font-weight: 600;
     color: #b62426;
@@ -351,7 +351,7 @@
 }
 
 .sectionTitle {
-    font-family: 'Unbounded', sans-serif;
+    font-family: var(--font-unbounded), 'Unbounded', sans-serif;
     font-size: clamp(28px, 5vw, 56px);
     font-weight: 800;
 }
@@ -412,7 +412,7 @@
 }
 
 .serviceNum {
-    font-family: 'Unbounded', sans-serif;
+    font-family: var(--font-unbounded), 'Unbounded', sans-serif;
     font-size: 36px;
     font-weight: 800;
     color: #333;
@@ -425,7 +425,7 @@
 }
 
 .serviceTitle {
-    font-family: 'Unbounded', sans-serif;
+    font-family: var(--font-unbounded), 'Unbounded', sans-serif;
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 8px;
@@ -440,7 +440,7 @@
     color: #b62426;
     font-weight: 700;
     font-size: 16px;
-    font-family: 'Unbounded', sans-serif;
+    font-family: var(--font-unbounded), 'Unbounded', sans-serif;
     white-space: nowrap;
 }
 
@@ -460,7 +460,7 @@
 }
 
 .featureTitle {
-    font-family: 'Unbounded', sans-serif;
+    font-family: var(--font-unbounded), 'Unbounded', sans-serif;
     font-size: 24px;
     font-weight: 700;
     margin-bottom: 16px;
@@ -539,7 +539,7 @@
 .priceValue {
     color: #b62426;
     font-weight: 600;
-    font-family: 'Unbounded', sans-serif;
+    font-family: var(--font-unbounded), 'Unbounded', sans-serif;
     white-space: nowrap;
 }
 
@@ -588,7 +588,7 @@
 }
 
 .ratingNumber {
-    font-family: 'Unbounded', sans-serif;
+    font-family: var(--font-unbounded), 'Unbounded', sans-serif;
     font-size: 56px;
     font-weight: 800;
     color: #fff;
@@ -650,7 +650,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Unbounded', sans-serif;
+    font-family: var(--font-unbounded), 'Unbounded', sans-serif;
     font-weight: 700;
     font-size: 18px;
     flex-shrink: 0;
@@ -772,7 +772,7 @@
 }
 
 .ctaTitle {
-    font-family: 'Unbounded', sans-serif;
+    font-family: var(--font-unbounded), 'Unbounded', sans-serif;
     font-size: clamp(28px, 5vw, 56px);
     font-weight: 800;
     margin-bottom: 24px;
@@ -796,7 +796,7 @@
     background: #fff;
     color: #b62426;
     padding: 20px 40px;
-    font-family: 'Unbounded', sans-serif;
+    font-family: var(--font-unbounded), 'Unbounded', sans-serif;
     font-weight: 700;
     font-size: 16px;
     text-decoration: none;
@@ -815,7 +815,7 @@
     border: 2px solid rgba(255,255,255,0.5);
     color: #fff;
     padding: 20px 40px;
-    font-family: 'Unbounded', sans-serif;
+    font-family: var(--font-unbounded), 'Unbounded', sans-serif;
     font-weight: 600;
     text-decoration: none;
     transition: all 0.3s ease;
@@ -849,7 +849,7 @@
 }
 
 .mapCardTitle {
-    font-family: 'Unbounded', sans-serif;
+    font-family: var(--font-unbounded), 'Unbounded', sans-serif;
     font-size: 22px;
     font-weight: 700;
     margin-bottom: 24px;
@@ -886,7 +886,7 @@
 }
 
 .footerTitle {
-    font-family: 'Unbounded', sans-serif;
+    font-family: var(--font-unbounded), 'Unbounded', sans-serif;
     font-size: 14px;
     margin-bottom: 24px;
     color: #b62426;
@@ -970,7 +970,7 @@
 .footerRatingNum {
     color: #b62426;
     font-weight: 700;
-    font-family: 'Unbounded', sans-serif;
+    font-family: var(--font-unbounded), 'Unbounded', sans-serif;
 }
 
 /* ============================================

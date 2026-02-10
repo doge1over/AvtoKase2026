@@ -70,10 +70,10 @@ export default function Home() {
     ];
 
     const galleryImages = [
-        '/gallery/IMG_8192 1.png',
-        '/gallery/IMG_8311 1.png',
-        '/gallery/IMG_7893 2.png',
-        '/gallery/IMG_7255 1.png',
+        '/gallery/IMG_8192 1.webp',
+        '/gallery/IMG_8311 1.webp',
+        '/gallery/IMG_7893 2.webp',
+        '/gallery/IMG_7255 1.webp',
     ];
 
     const renderStars = (rating: number) => {
@@ -366,6 +366,7 @@ export default function Home() {
                     src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=56867349266"
                     className={styles.map}
                     title="Карта"
+                    loading="lazy"
                 />
                 <div className={styles.mapCard}>
                     <h4 className={styles.mapCardTitle}>Как нас найти</h4>

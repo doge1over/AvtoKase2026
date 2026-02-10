@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(powershell:*)",
+      "Bash(dir:*)",
+      "Bash(node -e:*)",
+      "Bash(ls:*)",
+      "Bash(while read f)",
+      "Bash(do rm \"$f\")",
+      "Bash(echo:*)",
+      "Bash(done)",
+      "Bash(npm run build:*)"
+    ]
+  }
+}
