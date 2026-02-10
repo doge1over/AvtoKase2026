@@ -224,7 +224,7 @@ export default function Gallery() {
                     <div>
                         <h5 className={styles.footerTitle}>КОНТАКТЫ</h5>
                         <div className={styles.footerContact}>
-                            <MapPinIcon /> Токсово, Лен. область
+                            <MapPinIcon /> Токсово, Лен. область, Ленинградское ш. 13А
                         </div>
                         <div className={styles.footerContact}>
                             <PhoneIcon /> +7 (911) 014-17-51

@@ -1,0 +1,21 @@
+# Robots.txt для Автокейс
+# https://avtoservis-toksovo.ru
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://avtoservis-toksovo.ru/sitemap.xml
+
+# Яндекс
+User-agent: Yandex
+Allow: /
+Crawl-delay: 1
+
+# Google
+User-agent: Googlebot
+Allow: /
+
+# Запрет индексации служебных файлов
+Disallow: /_next/
+Disallow: /api/
