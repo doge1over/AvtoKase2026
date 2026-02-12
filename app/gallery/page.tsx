@@ -10,10 +10,10 @@ export default function Gallery() {
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
     const galleryItems = [
-        { id: 1, src: '/gallery/IMG_6484 1.webp', title: 'Работа 1' },
-        { id: 2, src: '/gallery/IMG_6532 1.webp', title: 'Работа 2' },
-        { id: 3, src: '/gallery/IMG_6728 1.webp', title: 'Работа 3' },
-        { id: 4, src: '/gallery/IMG_7228 1.webp', title: 'Работа 4' },
+        { id: 1, src: '/gallery/IMG_8192 1.webp', title: 'Работа 1' },
+        { id: 2, src: '/gallery/IMG_8311 1.webp', title: 'Работа 2' },
+        { id: 3, src: '/gallery/IMG_72311 1.webp', title: 'Работа 3' },
+        { id: 4, src: '/gallery/IMG_72331 1.webp', title: 'Работа 4' },
         { id: 5, src: '/gallery/IMG_7232 1.webp', title: 'Работа 5' },
         { id: 6, src: '/gallery/IMG_7234 1.webp', title: 'Работа 6' },
         { id: 7, src: '/gallery/IMG_7240 1.webp', title: 'Работа 7' },
@@ -30,10 +30,10 @@ export default function Gallery() {
         { id: 18, src: '/gallery/IMG_7886 1.webp', title: 'Работа 18' },
         { id: 19, src: '/gallery/IMG_7893 1.webp', title: 'Работа 19' },
         { id: 20, src: '/gallery/IMG_7893 2.webp', title: 'Работа 20' },
-        { id: 21, src: '/gallery/IMG_8192 1.webp', title: 'Работа 21' },
-        { id: 22, src: '/gallery/IMG_8311 1.webp', title: 'Работа 22' },
-        { id: 23, src: '/gallery/IMG_72311 1.webp', title: 'Работа 23' },
-        { id: 24, src: '/gallery/IMG_72331 1.webp', title: 'Работа 24' },
+        { id: 21, src: '/gallery/IMG_6484 1.webp', title: 'Работа 21' },
+        { id: 22, src: '/gallery/IMG_6532 1.webp', title: 'Работа 22' },
+        { id: 23, src: '/gallery/IMG_6728 1.webp', title: 'Работа 23' },
+        { id: 24, src: '/gallery/IMG_7228 1.webp', title: 'Работа 24' },
     ];
 
     const navItems = [
