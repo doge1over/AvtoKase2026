@@ -3,6 +3,8 @@
 
 User-agent: *
 Allow: /
+Disallow: /_next/
+Disallow: /api/
 
 # Sitemap
 Sitemap: https://avtoservis-toksovo.ru/sitemap.xml
@@ -16,6 +18,18 @@ Crawl-delay: 1
 User-agent: Googlebot
 Allow: /
 
-# Запрет индексации служебных файлов
-Disallow: /_next/
-Disallow: /api/
+# AI краулеры — разрешаем для видимости в AI-поиске
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /

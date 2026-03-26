@@ -1,98 +1,109 @@
-'use client';
-
-import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './page.module.css';
-import { PhoneIcon, ClockIcon, MapPinIcon, GiftIcon, StarIcon, ArrowRightIcon, WrenchIcon } from './components/Icons';
+import { PhoneIcon, ClockIcon, MapPinIcon, GiftIcon, StarIcon, ArrowRightIcon } from './components/Icons';
+import ServiceCards from './components/ServiceCards';
+
+const services = [
+    { id: '01', title: 'Шиномонтаж', desc: 'Сезонная замена, ремонт и балансировка шин для колёс до 26 дюймов. Используем современное оборудование для точной балансировки и бережного монтажа. Пакеты для хранения шин — бесплатно.', price: 'от 1400 ₽' },
+    { id: '02', title: 'Заправка кондиционеров', desc: 'Диагностика и заправка автокондиционеров на автоматической заправочной станции. Проверяем герметичность системы, определяем утечки и заправляем фреоном с точностью до грамма.', price: 'от 1500 ₽' },
+    { id: '03', title: 'Магазин запчастей', desc: 'Собственный магазин автозапчастей при сервисе. Подбор оригинальных и аналоговых деталей для большинства марок. Нужная запчасть всегда под рукой — сокращаем время ремонта.', price: '—' },
+    { id: '04', title: 'Развал-схождение', desc: 'Регулировка углов установки колёс на 4-х стоечном подъёмнике с компьютерной диагностикой. Устраняем неравномерный износ шин и улучшаем управляемость автомобиля.', price: 'от 1000 ₽' },
+    { id: '05', title: 'Ремонт двигателя', desc: 'Капитальный и частичный ремонт двигателей любой сложности. Диагностика, замена ГРМ, прокладок, поршневой группы. Работаем с бензиновыми и дизельными моторами всех марок.', price: 'от 35000 ₽' },
+    { id: '06', title: 'Аргонно-дуговая сварка', desc: 'Сварка аргоном деталей из алюминия, нержавеющей стали и других металлов. Ремонт радиаторов, впускных коллекторов, поддонов картера и других элементов автомобиля.', price: 'договорная' },
+];
+
+const priceList = [
+    { service: 'Ремонт топливной системы', price: 'от 1500 ₽' },
+    { service: 'Обслуживание подвески', price: 'от 1500 ₽' },
+    { service: 'Обслуживание тормозной системы', price: 'от 1500 ₽' },
+    { service: 'Замена жидкостей (масла)', price: 'от 1660 ₽' },
+    { service: 'Компьютерная диагностика', price: 'от 1500 ₽' },
+    { service: 'Сезонная смена шин', price: 'от 1400 ₽' },
+    { service: 'Ремонт всех видов шин', price: 'от 500 ₽' },
+    { service: 'Компьютерная балансировка', price: 'от 400 ₽' },
+    { service: 'Сход-развал', price: 'от 1000 ₽' },
+];
+
+const reviews = [
+    {
+        name: 'Александр М.',
+        date: 'Март 2026',
+        rating: 5,
+        text: 'Отличный сервис! Сделали развал-схождение быстро и качественно. Цены адекватные, мастера вежливые. Рекомендую всем в Токсово и окрестностях!',
+        car: 'Toyota Camry'
+    },
+    {
+        name: 'Елена К.',
+        date: 'Февраль 2026',
+        rating: 5,
+        text: 'Обратилась с проблемой кондиционера. Диагностировали и заправили за час. Теперь всё работает отлично. Спасибо мастерам Автокейс!',
+        car: 'Kia Rio'
+    },
+    {
+        name: 'Дмитрий В.',
+        date: 'Январь 2026',
+        rating: 5,
+        text: 'Делал капремонт двигателя. Работа сложная, но ребята справились на отлично. Машина как новая! Ездил из Мурино — не пожалел.',
+        car: 'BMW X5'
+    },
+    {
+        name: 'Ольга С.',
+        date: 'Декабрь 2025',
+        rating: 5,
+        text: 'Хороший шиномонтаж, быстро переобули на зиму. Приехала из Девяткино по совету подруги. Теперь только к вам!',
+        car: 'Hyundai Solaris'
+    },
+];
+
+const faqItems = [
+    {
+        question: 'Сколько стоит шиномонтаж в Токсово?',
+        answer: 'Стоимость шиномонтажа в автосервисе Автокейс начинается от 1400 ₽. Цена зависит от диаметра колёс (обслуживаем до 26 дюймов) и типа работ: сезонная замена, ремонт прокола или балансировка. Пакеты для хранения шин предоставляем бесплатно.',
+    },
+    {
+        question: 'Нужна ли предварительная запись?',
+        answer: 'Предварительная запись желательна, но не обязательна. Мы принимаем клиентов и без записи при наличии свободных мест. Для записи позвоните по телефону +7 (911) 014-17-51. Работаем ежедневно с 10:00 до 21:00.',
+    },
+    {
+        question: 'Какие марки автомобилей вы обслуживаете?',
+        answer: 'Автосервис Автокейс обслуживает автомобили всех марок: отечественные (ВАЗ, ГАЗ), японские (Toyota, Honda, Nissan, Mazda), корейские (Kia, Hyundai), немецкие (BMW, Mercedes, Volkswagen, Audi), французские (Renault, Peugeot) и другие. Работаем как с бензиновыми, так и с дизельными двигателями.',
+    },
+    {
+        question: 'Где находится автосервис Автокейс?',
+        answer: 'Автосервис расположен по адресу: Ленинградское шоссе, 13А, Токсово, Ленинградская область, 188664. До нас удобно добраться из Мурино, Девяткино, Кузьмолово и северных районов Санкт-Петербурга. Есть удобная парковка рядом с сервисом.',
+    },
+    {
+        question: 'Какие гарантии вы предоставляете?',
+        answer: 'На все выполненные работы мы предоставляем гарантию. Срок гарантии зависит от вида работ: на шиномонтаж и балансировку — 1 месяц, на ремонт подвески — до 3 месяцев, на ремонт двигателя — до 6 месяцев. Используем только качественные запчасти от проверенных поставщиков.',
+    },
+];
+
+const galleryImages = [
+    { src: '/gallery/IMG_8192 1.webp', alt: 'Ремонт подвески автомобиля в автосервисе Автокейс Токсово' },
+    { src: '/gallery/IMG_8311 1.webp', alt: 'Замена тормозных колодок в Автокейс' },
+    { src: '/gallery/IMG_7893 2.webp', alt: 'Диагностика двигателя на стенде в Токсово' },
+    { src: '/gallery/IMG_7255 1.webp', alt: 'Шиномонтаж и балансировка колёс в Автокейс' },
+];
+
+const navItems = [
+    { name: 'Главная', href: '/' },
+    { name: 'Услуги', href: '/#services' },
+    { name: 'Цены', href: '/#prices' },
+    { name: 'Отзывы', href: '/#reviews' },
+    { name: 'Галерея', href: '/gallery' },
+    { name: 'Контакты', href: '/#contacts' },
+];
+
+function renderStars(rating: number) {
+    return Array.from({ length: 5 }, (_, i) => (
+        <span key={i} className={i < rating ? styles.starFilled : styles.starEmpty}>
+            <StarIcon filled={i < rating} />
+        </span>
+    ));
+}
 
 export default function Home() {
-    const [activeService, setActiveService] = useState<number>(0);
-    const [isVisible, setIsVisible] = useState<boolean>(false);
-
-    useEffect(() => {
-        // Используем requestAnimationFrame чтобы избежать ESLint ошибки
-        const frame = requestAnimationFrame(() => {
-            setIsVisible(true);
-        });
-        return () => cancelAnimationFrame(frame);
-    }, []);
-
-    const services = [
-        { id: '01', title: 'Шиномонтаж', desc: 'Размер колес до 26 дюймов', price: 'от 1400 ₽' },
-        { id: '02', title: 'Заправка кондиционеров', desc: 'Автоматическая заправочная станция', price: 'от 1500 ₽' },
-        { id: '03', title: 'Магазин запчастей', desc: 'Собственный магазин авто-запчастей', price: '—' },
-        { id: '04', title: 'Развал-схождение', desc: '4-х стоечный подъёмник для развал-схождения', price: 'от 1000 ₽' },
-        { id: '05', title: 'Ремонт двигателя', desc: 'Капитальный ремонт от мастеров своего дела', price: 'от 35000 ₽' },
-    ];
-
-    const priceList = [
-        { service: 'Ремонт топливной системы', price: 'от 1500 ₽' },
-        { service: 'Обслуживание подвески', price: 'от 1500 ₽' },
-        { service: 'Обслуживание тормозной системы', price: 'от 1500 ₽' },
-        { service: 'Замена жидкостей (масла)', price: 'от 1660 ₽' },
-        { service: 'Компьютерная диагностика', price: 'от 1500 ₽' },
-        { service: 'Сезонная смена шин', price: 'от 1400 ₽' },
-        { service: 'Ремонт всех видов шин', price: 'от 500 ₽' },
-        { service: 'Компьютерная балансировка', price: 'от 400 ₽' },
-        { service: 'Сход-развал', price: 'от 1000 ₽' },
-    ];
-
-    const reviews = [
-        {
-            name: 'Александр М.',
-            date: '15 января 2024',
-            rating: 5,
-            text: 'Отличный сервис! Сделали развал-схождение быстро и качественно. Цены адекватные, мастера вежливые. Рекомендую!',
-            car: 'Toyota Camry'
-        },
-        {
-            name: 'Елена К.',
-            date: '28 декабря 2023',
-            rating: 5,
-            text: 'Обратилась с проблемой кондиционера. Диагностировали и заправили за час. Теперь всё работает отлично. Спасибо!',
-            car: 'Kia Rio'
-        },
-        {
-            name: 'Дмитрий В.',
-            date: '10 декабря 2023',
-            rating: 5,
-            text: 'Делал капремонт двигателя. Работа сложная, но ребята справились на отлично. Машина как новая!',
-            car: 'BMW X5'
-        },
-        {
-            name: 'Ольга С.',
-            date: '5 ноября 2023',
-            rating: 4,
-            text: 'Хороший шиномонтаж, быстро переобули на зиму. Единственное — пришлось немного подождать в очереди.',
-            car: 'Hyundai Solaris'
-        },
-    ];
-
-    const galleryImages = [
-        '/gallery/IMG_8192 1.webp',
-        '/gallery/IMG_8311 1.webp',
-        '/gallery/IMG_7893 2.webp',
-        '/gallery/IMG_7255 1.webp',
-    ];
-
-    const renderStars = (rating: number) => {
-        return Array.from({ length: 5 }, (_, i) => (
-            <span key={i} className={i < rating ? styles.starFilled : styles.starEmpty}>
-                <StarIcon filled={i < rating} />
-            </span>
-        ));
-    };
-
-    const navItems = [
-        { name: 'Главная', href: '/' },
-        { name: 'Услуги', href: '/#services' },
-        { name: 'Цены', href: '/#prices' },
-        { name: 'Отзывы', href: '/#reviews' },
-        { name: 'Галерея', href: '/gallery' },
-        { name: 'Контакты', href: '/#contacts' },
-    ];
-
     return (
         <div className={styles.wrapper}>
             {/* Header */}
@@ -132,21 +143,22 @@ export default function Home() {
                 <div className={styles.heroDecor} />
 
                 <div className={styles.heroContent}>
-                    <div className={`${styles.heroLocation} ${isVisible ? styles.animateSlideIn : ''}`}>
+                    <div className={`${styles.heroLocation} ${styles.animateSlideIn}`}>
                         <MapPinIcon /> ТОКСОВО • ЛЕН. ОБЛАСТЬ • Ленинградское ш. 13А
                     </div>
 
-                    <h1 className={`${styles.heroTitle} ${isVisible ? styles.animateSlideUp : ''}`}>
-                        РЕМОНТ<br />
-                        <span className={styles.heroTitleAccent}>АВТО</span>
+                    <h1 className={styles.heroTitle}>
+                        АВТОСЕРВИС<br />
+                        <span className={styles.heroTitleAccent}>АВТОКЕЙС</span>
                     </h1>
 
-                    <p className={`${styles.heroDesc} ${isVisible ? styles.animateSlideUp : ''}`}>
-                        В кратчайшие сроки. Профессионально и аккуратно.
-                        Без обмана и непредвиденных трат. С максимальным вниманием к вашей проблеме.
+                    <p className={`${styles.heroDesc} ${styles.animateSlideUp}`}>
+                        Профессиональный ремонт автомобилей в Токсово с 2014 года.
+                        Шиномонтаж, развал-схождение, диагностика и ремонт двигателя.
+                        Обслуживаем жителей Токсово, Мурино, Девяткино и Кузьмолово.
                     </p>
 
-                    <div className={`${styles.heroButtons} ${isVisible ? styles.animateSlideUp : ''}`}>
+                    <div className={`${styles.heroButtons} ${styles.animateSlideUp}`}>
                         <a href="tel:+79110141751" className={styles.btnPrimary}>
                             ЗАПИСАТЬСЯ НА СЕРВИС <ArrowRightIcon />
                         </a>
@@ -162,7 +174,7 @@ export default function Home() {
                         { num: '5000+', label: 'Клиентов' },
                         { num: '4.9', label: 'Рейтинг' },
                     ].map((stat, i) => (
-                        <div key={i} className={`${styles.statItem} ${isVisible ? styles.animateFadeIn : ''}`}>
+                        <div key={i} className={`${styles.statItem} ${styles.animateFadeIn}`}>
                             <div className={styles.statNum}>{stat.num}</div>
                             <div className={styles.statLabel}>{stat.label}</div>
                         </div>
@@ -177,46 +189,10 @@ export default function Home() {
                 <div className={styles.servicesContainer}>
                     <div className={styles.sectionHeader}>
                         <h2 className={styles.sectionLabel}>УСЛУГИ</h2>
-                        <h3 className={styles.sectionTitle}>Наши услуги</h3>
+                        <h3 className={styles.sectionTitle}>Услуги автосервиса в Токсово</h3>
                     </div>
 
-                    <div className={styles.servicesGrid}>
-                        <div className={styles.servicesList}>
-                            {services.map((service, i) => (
-                                <div
-                                    key={i}
-                                    className={`${styles.serviceCard} ${activeService === i ? styles.serviceCardActive : ''}`}
-                                    onClick={() => setActiveService(i)}
-                                >
-                                    <div className={styles.serviceCardContent}>
-                                        <div>
-                                            <div className={`${styles.serviceNum} ${activeService === i ? styles.serviceNumActive : ''}`}>
-                                                {service.id}
-                                            </div>
-                                            <h4 className={styles.serviceTitle}>{service.title}</h4>
-                                            <p className={styles.serviceDesc}>{service.desc}</p>
-                                        </div>
-                                        <div className={styles.servicePrice}>{service.price}</div>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-
-                        <div className={styles.featureCard}>
-                            <div>
-                                <div className={styles.featureIcon}>
-                                    <WrenchIcon />
-                                </div>
-                                <h4 className={styles.featureTitle}>Качественный ремонт</h4>
-                                <p className={styles.featureDesc}>
-                                    Ремонт от мастеров своего дела. Используем только качественные запчасти и современное оборудование.
-                                </p>
-                            </div>
-                            <div className={styles.featureNote}>
-                                НОРМО-ЧАС ОТ 1000₽ ДО 3500₽
-                            </div>
-                        </div>
-                    </div>
+                    <ServiceCards services={services} />
                 </div>
             </section>
 
@@ -229,6 +205,7 @@ export default function Home() {
                             <h3 className={styles.sectionTitle}>Цены на услуги</h3>
                             <p className={styles.priceNote}>
                                 Все цены указаны примерно. Наш сервис работает по нормо-часам.
+                                Точную стоимость ремонта мастер определит после осмотра автомобиля.
                                 Консультации входят в стоимость.
                             </p>
                             <div className={styles.freeTag}>
@@ -321,8 +298,8 @@ export default function Home() {
                     {galleryImages.map((img, i) => (
                         <div key={i} className={styles.galleryItem}>
                             <Image
-                                src={img}
-                                alt={`Работа ${i + 1}`}
+                                src={img.src}
+                                alt={img.alt}
                                 width={600}
                                 height={600}
                                 quality={80}
@@ -338,6 +315,25 @@ export default function Home() {
                     <Link href="/gallery" className={styles.btnPrimary}>
                         СМОТРЕТЬ ВСЕ РАБОТЫ <ArrowRightIcon />
                     </Link>
+                </div>
+            </section>
+
+            {/* FAQ Section */}
+            <section className={styles.faqSection}>
+                <div className={styles.faqContainer}>
+                    <div className={styles.sectionHeader}>
+                        <h2 className={styles.sectionLabel}>ВОПРОСЫ И ОТВЕТЫ</h2>
+                        <h3 className={styles.sectionTitle}>Часто задаваемые вопросы</h3>
+                    </div>
+
+                    <div className={styles.faqList}>
+                        {faqItems.map((item, i) => (
+                            <div key={i} className={styles.faqItem}>
+                                <h4 className={styles.faqQuestion}>{item.question}</h4>
+                                <p className={styles.faqAnswer}>{item.answer}</p>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </section>
 
@@ -365,13 +361,13 @@ export default function Home() {
                 <iframe
                     src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=56867349266"
                     className={styles.map}
-                    title="Карта"
+                    title="Автосервис Автокейс на карте Токсово"
                     loading="lazy"
                 />
                 <div className={styles.mapCard}>
-                    <h4 className={styles.mapCardTitle}>Как нас найти</h4>
+                    <h3 className={styles.mapCardTitle}>Как нас найти</h3>
                     <div className={styles.mapCardItem}>
-                        <MapPinIcon /> Токсово, Лен. область, Ленинградское ш. 13А
+                        <MapPinIcon /> Токсово, Ленинградская область, Ленинградское шоссе, 13А
                     </div>
                     <div className={styles.mapCardItem}>
                         <ClockIcon /> 10:00 — 21:00 ежедневно
@@ -397,7 +393,9 @@ export default function Home() {
                             </div>
                         </Link>
                         <p className={styles.footerDesc}>
-                            Качественный ремонт автомобилей в Токсово. Профессиональный подход и честные цены.
+                            Автосервис Автокейс — качественный ремонт автомобилей в Токсово.
+                            Профессиональный подход, честные цены и гарантия на все работы.
+                            Обслуживаем Токсово, Мурино, Девяткино, Кузьмолово и СПб.
                         </p>
                     </div>
 
@@ -410,21 +408,27 @@ export default function Home() {
 
                     <div>
                         <h5 className={styles.footerTitle}>УСЛУГИ</h5>
-                        {['Шиномонтаж', 'Развал-схождение', 'Диагностика', 'Ремонт двигателя', 'Тюнинг 4x4'].map((item, i) => (
-                            <a key={i} href="#" className={styles.footerLink}>{item}</a>
+                        {[
+                            { name: 'Шиномонтаж', href: '/#services' },
+                            { name: 'Развал-схождение', href: '/#services' },
+                            { name: 'Диагностика', href: '/#services' },
+                            { name: 'Ремонт двигателя', href: '/#services' },
+                            { name: 'Заправка кондиционера', href: '/#services' },
+                        ].map((item, i) => (
+                            <Link key={i} href={item.href} className={styles.footerLink}>{item.name}</Link>
                         ))}
                     </div>
 
                     <div>
                         <h5 className={styles.footerTitle}>КОНТАКТЫ</h5>
                         <div className={styles.footerContact}>
-                            <MapPinIcon /> Токсово, Лен. область, Ленинградское ш. 13А
+                            <MapPinIcon /> Токсово, Ленинградская область, Ленинградское шоссе, 13А
                         </div>
                         <div className={styles.footerContact}>
                             <PhoneIcon /> +7 (911) 014-17-51
                         </div>
                         <div className={styles.footerContact}>
-                            <ClockIcon /> 10:00 — 21:00
+                            <ClockIcon /> 10:00 — 21:00 ежедневно
                         </div>
                         <a href="https://vk.com/avtokeis" target="_blank" rel="noopener noreferrer" className={styles.vkButton}>
                             VK
@@ -433,7 +437,7 @@ export default function Home() {
                 </div>
 
                 <div className={styles.footerBottom}>
-                    <div className={styles.copyright}>© 2024 Автокейс. Все права защищены.</div>
+                    <div className={styles.copyright}>© 2026 Автокейс. Все права защищены.</div>
                     <div className={styles.footerRating}>
                         <span>Рейтинг на Яндекс</span>
                         <div className={styles.footerStars}>

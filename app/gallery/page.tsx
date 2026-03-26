@@ -10,30 +10,30 @@ export default function Gallery() {
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
     const galleryItems = [
-        { id: 1, src: '/gallery/IMG_8192 1.webp', title: 'Работа 1' },
-        { id: 2, src: '/gallery/IMG_8311 1.webp', title: 'Работа 2' },
-        { id: 3, src: '/gallery/IMG_72311 1.webp', title: 'Работа 3' },
-        { id: 4, src: '/gallery/IMG_72331 1.webp', title: 'Работа 4' },
-        { id: 5, src: '/gallery/IMG_7232 1.webp', title: 'Работа 5' },
-        { id: 6, src: '/gallery/IMG_7234 1.webp', title: 'Работа 6' },
-        { id: 7, src: '/gallery/IMG_7240 1.webp', title: 'Работа 7' },
-        { id: 8, src: '/gallery/IMG_7255 1.webp', title: 'Работа 8' },
-        { id: 9, src: '/gallery/IMG_7305 1.webp', title: 'Работа 9' },
-        { id: 10, src: '/gallery/IMG_7376 1.webp', title: 'Работа 10' },
-        { id: 11, src: '/gallery/IMG_7401 1.webp', title: 'Работа 11' },
-        { id: 12, src: '/gallery/IMG_7402 1.webp', title: 'Работа 12' },
-        { id: 13, src: '/gallery/IMG_7583 1.webp', title: 'Работа 13' },
-        { id: 14, src: '/gallery/IMG_7585 1.webp', title: 'Работа 14' },
-        { id: 15, src: '/gallery/IMG_7588 1.webp', title: 'Работа 15' },
-        { id: 16, src: '/gallery/IMG_7624 1.webp', title: 'Работа 16' },
-        { id: 17, src: '/gallery/IMG_7885 1.webp', title: 'Работа 17' },
-        { id: 18, src: '/gallery/IMG_7886 1.webp', title: 'Работа 18' },
-        { id: 19, src: '/gallery/IMG_7893 1.webp', title: 'Работа 19' },
-        { id: 20, src: '/gallery/IMG_7893 2.webp', title: 'Работа 20' },
-        { id: 21, src: '/gallery/IMG_6484 1.webp', title: 'Работа 21' },
-        { id: 22, src: '/gallery/IMG_6532 1.webp', title: 'Работа 22' },
-        { id: 23, src: '/gallery/IMG_6728 1.webp', title: 'Работа 23' },
-        { id: 24, src: '/gallery/IMG_7228 1.webp', title: 'Работа 24' },
+        { id: 1, src: '/gallery/IMG_8192 1.webp', title: 'Ремонт подвески автомобиля в Автокейс Токсово' },
+        { id: 2, src: '/gallery/IMG_8311 1.webp', title: 'Замена тормозных дисков в автосервисе' },
+        { id: 3, src: '/gallery/IMG_72311 1.webp', title: 'Диагностика ходовой части автомобиля' },
+        { id: 4, src: '/gallery/IMG_72331 1.webp', title: 'Ремонт двигателя в Автокейс' },
+        { id: 5, src: '/gallery/IMG_7232 1.webp', title: 'Замена масла и фильтров' },
+        { id: 6, src: '/gallery/IMG_7234 1.webp', title: 'Обслуживание тормозной системы' },
+        { id: 7, src: '/gallery/IMG_7240 1.webp', title: 'Ремонт подвески — замена амортизаторов' },
+        { id: 8, src: '/gallery/IMG_7255 1.webp', title: 'Шиномонтаж и балансировка колёс' },
+        { id: 9, src: '/gallery/IMG_7305 1.webp', title: 'Компьютерная диагностика автомобиля' },
+        { id: 10, src: '/gallery/IMG_7376 1.webp', title: 'Ремонт топливной системы' },
+        { id: 11, src: '/gallery/IMG_7401 1.webp', title: 'Развал-схождение на стенде' },
+        { id: 12, src: '/gallery/IMG_7402 1.webp', title: 'Регулировка углов установки колёс' },
+        { id: 13, src: '/gallery/IMG_7583 1.webp', title: 'Заправка автокондиционера' },
+        { id: 14, src: '/gallery/IMG_7585 1.webp', title: 'Проверка герметичности кондиционера' },
+        { id: 15, src: '/gallery/IMG_7588 1.webp', title: 'Ремонт выхлопной системы' },
+        { id: 16, src: '/gallery/IMG_7624 1.webp', title: 'Замена ремня ГРМ' },
+        { id: 17, src: '/gallery/IMG_7885 1.webp', title: 'Капитальный ремонт двигателя' },
+        { id: 18, src: '/gallery/IMG_7886 1.webp', title: 'Сборка двигателя после ремонта' },
+        { id: 19, src: '/gallery/IMG_7893 1.webp', title: 'Ремонт коробки передач' },
+        { id: 20, src: '/gallery/IMG_7893 2.webp', title: 'Обслуживание трансмиссии' },
+        { id: 21, src: '/gallery/IMG_6484 1.webp', title: 'Замена сцепления автомобиля' },
+        { id: 22, src: '/gallery/IMG_6532 1.webp', title: 'Ремонт электрооборудования' },
+        { id: 23, src: '/gallery/IMG_6728 1.webp', title: 'Подготовка автомобиля к ТО' },
+        { id: 24, src: '/gallery/IMG_7228 1.webp', title: 'Ремонт рулевого управления' },
     ];
 
     const navItems = [
@@ -176,8 +176,14 @@ export default function Gallery() {
 
                     <div>
                         <h5 className={styles.footerTitle}>УСЛУГИ</h5>
-                        {['Шиномонтаж', 'Развал-схождение', 'Диагностика', 'Ремонт двигателя', 'Тюнинг 4x4'].map((item, i) => (
-                            <a key={i} href="#" className={styles.footerLink}>{item}</a>
+                        {[
+                            { name: 'Шиномонтаж', href: '/#services' },
+                            { name: 'Развал-схождение', href: '/#services' },
+                            { name: 'Диагностика', href: '/#services' },
+                            { name: 'Ремонт двигателя', href: '/#services' },
+                            { name: 'Заправка кондиционера', href: '/#services' },
+                        ].map((item, i) => (
+                            <Link key={i} href={item.href} className={styles.footerLink}>{item.name}</Link>
                         ))}
                     </div>
 
@@ -199,7 +205,7 @@ export default function Gallery() {
                 </div>
 
                 <div className={styles.footerBottom}>
-                    <div className={styles.copyright}>© 2024 Автокейс. Все права защищены.</div>
+                    <div className={styles.copyright}>© 2026 Автокейс. Все права защищены.</div>
                 </div>
             </footer>
         </div>

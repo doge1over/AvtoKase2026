@@ -6,44 +6,24 @@ import YandexMetrika from "./components/YandexMetrika";
 
 const unbounded = Unbounded({
     subsets: ['cyrillic', 'latin'],
-    weight: ['200', '300', '400', '500', '600', '700', '800', '900'],
+    weight: ['600', '700', '800', '900'],
     display: 'swap',
     variable: '--font-unbounded',
 });
 
 const montserrat = Montserrat({
     subsets: ['cyrillic', 'latin'],
-    weight: ['300', '400', '500', '600', '700'],
+    weight: ['400', '500', '600', '700'],
     display: 'swap',
     variable: '--font-montserrat',
 });
 
 export const metadata: Metadata = {
+    metadataBase: new URL('https://avtoservis-toksovo.ru'),
+
     // Основные мета-теги
     title: "Автосервис Автокейс в Токсово — Ремонт авто, шиномонтаж, развал-схождение",
     description: "Автосервис Автокейс в Токсово (Ленинградская область). Ремонт автомобилей любой сложности: шиномонтаж от 1400₽, развал-схождение, диагностика, ремонт двигателя. Работаем ежедневно 10:00-21:00. ☎ +7 (911) 014-17-51",
-
-    // Ключевые слова
-    keywords: [
-        "автосервис токсово",
-        "автосервис мурино",
-        "автосервис девяткино",
-        "ремонт авто токсово",
-        "шиномонтаж токсово",
-        "развал схождение токсово",
-        "автосервис ленинградская область",
-        "ремонт двигателя токсово",
-        "диагностика авто токсово",
-        "замена масла токсово",
-        "ремонт подвески токсово",
-        "заправка кондиционера авто токсово",
-        "автосервис всеволожский район",
-        "СТО токсово",
-        "автомастерская токсово",
-        "ремонт автомобилей недорого",
-        "автокейс",
-        "avtokeys"
-    ].join(", "),
 
     // Авторство
     authors: [{ name: "Автокейс" }],
@@ -121,9 +101,10 @@ export default function RootLayout({
     const jsonLd = {
         "@context": "https://schema.org",
         "@type": "AutoRepair",
+        "@id": "https://avtoservis-toksovo.ru/#autorepair",
         "name": "Автокейс",
         "alternateName": "Avtokeys",
-        "description": "Автосервис в Токсово. Ремонт автомобилей любой сложности: шиномонтаж, развал-схождение, диагностика, ремонт двигателя, заправка кондиционеров.",
+        "description": "Автосервис в Токсово — профессиональный ремонт автомобилей всех марок с 2014 года. Шиномонтаж, развал-схождение, диагностика, ремонт двигателя, заправка кондиционеров. Обслуживаем Токсово, Мурино, Девяткино, Кузьмолово и Санкт-Петербург.",
         "url": "https://avtoservis-toksovo.ru",
         "telephone": "+7-911-014-17-51",
         "address": {
@@ -156,6 +137,13 @@ export default function RootLayout({
         "priceRange": "₽₽",
         "currenciesAccepted": "RUB",
         "paymentAccepted": "Наличные, Карты",
+        "areaServed": [
+            { "@type": "City", "name": "Токсово" },
+            { "@type": "City", "name": "Мурино" },
+            { "@type": "City", "name": "Девяткино" },
+            { "@type": "City", "name": "Кузьмолово" },
+            { "@type": "City", "name": "Санкт-Петербург" }
+        ],
         "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "4.9",
@@ -163,6 +151,29 @@ export default function RootLayout({
             "bestRating": "5",
             "worstRating": "1"
         },
+        "review": [
+            {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "Александр М." },
+                "datePublished": "2026-03",
+                "reviewBody": "Отличный сервис! Сделали развал-схождение быстро и качественно. Цены адекватные, мастера вежливые.",
+                "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+            },
+            {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "Елена К." },
+                "datePublished": "2026-02",
+                "reviewBody": "Обратилась с проблемой кондиционера. Диагностировали и заправили за час. Теперь всё работает отлично.",
+                "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+            },
+            {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "Дмитрий В." },
+                "datePublished": "2026-01",
+                "reviewBody": "Делал капремонт двигателя. Работа сложная, но ребята справились на отлично. Машина как новая!",
+                "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+            }
+        ],
         "image": "https://avtoservis-toksovo.ru/og-image.jpg",
         "sameAs": [
             "https://vk.com/avtokeis",
@@ -177,7 +188,7 @@ export default function RootLayout({
                     "itemOffered": {
                         "@type": "Service",
                         "name": "Шиномонтаж",
-                        "description": "Шиномонтаж колес до 26 дюймов"
+                        "description": "Сезонная замена, ремонт и балансировка шин для колёс до 26 дюймов"
                     },
                     "price": "1400",
                     "priceCurrency": "RUB"
@@ -187,7 +198,7 @@ export default function RootLayout({
                     "itemOffered": {
                         "@type": "Service",
                         "name": "Развал-схождение",
-                        "description": "Развал-схождение на 4-х стоечном подъёмнике"
+                        "description": "Регулировка углов установки колёс на 4-х стоечном подъёмнике с компьютерной диагностикой"
                     },
                     "price": "1000",
                     "priceCurrency": "RUB"
@@ -197,7 +208,7 @@ export default function RootLayout({
                     "itemOffered": {
                         "@type": "Service",
                         "name": "Компьютерная диагностика",
-                        "description": "Полная компьютерная диагностика автомобиля"
+                        "description": "Полная компьютерная диагностика всех систем автомобиля"
                     },
                     "price": "1500",
                     "priceCurrency": "RUB"
@@ -207,7 +218,7 @@ export default function RootLayout({
                     "itemOffered": {
                         "@type": "Service",
                         "name": "Заправка кондиционера",
-                        "description": "Заправка автомобильного кондиционера"
+                        "description": "Диагностика и заправка автомобильного кондиционера на автоматической станции"
                     },
                     "price": "1500",
                     "priceCurrency": "RUB"
@@ -217,90 +228,21 @@ export default function RootLayout({
                     "itemOffered": {
                         "@type": "Service",
                         "name": "Ремонт двигателя",
-                        "description": "Капитальный ремонт двигателя"
+                        "description": "Капитальный и частичный ремонт бензиновых и дизельных двигателей"
                     },
                     "price": "35000",
                     "priceCurrency": "RUB"
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Аргонно-дуговая сварка",
+                        "description": "Сварка аргоном деталей из алюминия, нержавеющей стали и других металлов"
+                    }
                 }
             ]
         }
-    };
-
-    // Хлебные крошки для SEO
-    const breadcrumbJsonLd = {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Главная",
-                "item": "https://avtoservis-toksovo.ru"
-            },
-            {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Услуги",
-                "item": "https://avtoservis-toksovo.ru/#services"
-            },
-            {
-                "@type": "ListItem",
-                "position": 3,
-                "name": "Цены",
-                "item": "https://avtoservis-toksovo.ru/#prices"
-            },
-            {
-                "@type": "ListItem",
-                "position": 4,
-                "name": "Отзывы",
-                "item": "https://avtoservis-toksovo.ru/#reviews"
-            },
-            {
-                "@type": "ListItem",
-                "position": 5,
-                "name": "Контакты",
-                "item": "https://avtoservis-toksovo.ru/#contacts"
-            }
-        ]
-    };
-
-    // Локальный бизнес для карт
-    const localBusinessJsonLd = {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "Автокейс",
-        "image": "https://avtoservis-toksovo.ru/og-image.jpg",
-        "@id": "https://avtoservis-toksovo.ru",
-        "url": "https://avtoservis-toksovo.ru",
-        "telephone": "+7-911-014-17-51",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Ленинградское шоссе, 13А",
-            "addressLocality": "Токсово",
-            "addressRegion": "Ленинградская область",
-            "postalCode": "188664",
-            "addressCountry": "RU"
-        },
-        "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": 60.137273,
-            "longitude": 30.527862
-        },
-        "openingHoursSpecification": {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": [
-                "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
-            ],
-            "opens": "10:00",
-            "closes": "21:00"
-        },
-        "areaServed": [
-            { "@type": "City", "name": "Токсово" },
-            { "@type": "City", "name": "Мурино" },
-            { "@type": "City", "name": "Девяткино" },
-            { "@type": "City", "name": "Кузьмолово" },
-            { "@type": "City", "name": "Санкт-Петербург" }
-        ]
     };
 
     return (
@@ -311,14 +253,7 @@ export default function RootLayout({
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
-            />
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
-            />
+            {/* BreadcrumbList и LocalBusiness удалены: breadcrumbs указывали на фрагменты, LocalBusiness дублировал AutoRepair */}
 
             {/* Дополнительные мета-теги */}
             <meta name="format-detection" content="telephone=yes" />

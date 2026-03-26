@@ -256,8 +256,6 @@
     font-weight: 900;
     line-height: 1;
     margin-bottom: 32px;
-    opacity: 0;
-    animation-delay: 0.4s;
 }
 
 .heroTitleAccent {
@@ -744,6 +742,128 @@
 .galleryCta {
     text-align: center;
     padding: 60px 40px 0;
+}
+
+/* === ABOUT SECTION === */
+.aboutSection {
+    padding: 80px 60px;
+    background: linear-gradient(180deg, #0a0a0a 0%, #111 100%);
+}
+
+.aboutContainer {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.aboutText {
+    color: #999;
+    font-size: 16px;
+    line-height: 1.9;
+    margin-bottom: 20px;
+}
+
+.aboutText strong {
+    color: #fff;
+}
+
+/* === FAQ SECTION === */
+.faqSection {
+    padding: 120px 60px;
+    background: linear-gradient(180deg, #0a0a0a 0%, #111 100%);
+}
+
+.faqContainer {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.faqList {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.faqItem {
+    background: linear-gradient(145deg, rgba(40,40,40,0.6) 0%, rgba(20,20,20,0.8) 100%);
+    border: 1px solid rgba(255,255,255,0.05);
+    padding: 32px;
+    transition: border-color 0.3s ease;
+}
+
+.faqItem:hover {
+    border-color: rgba(182, 36, 38, 0.3);
+}
+
+.faqQuestion {
+    font-family: var(--font-unbounded), 'Unbounded', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #fff;
+}
+
+.faqAnswer {
+    color: #999;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+@media (max-width: 1023px) {
+    .aboutSection {
+        padding: 60px 30px;
+    }
+
+    .faqSection {
+        padding: 80px 30px;
+    }
+
+    .faqItem {
+        padding: 24px;
+    }
+}
+
+@media (max-width: 767px) {
+    .aboutSection {
+        padding: 40px 20px;
+    }
+
+    .faqSection {
+        padding: 60px 20px;
+    }
+
+    .faqItem {
+        padding: 20px;
+    }
+
+    .faqQuestion {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 479px) {
+    .aboutSection {
+        padding: 32px 16px;
+    }
+
+    .aboutText {
+        font-size: 14px;
+    }
+
+    .faqSection {
+        padding: 50px 16px;
+    }
+
+    .faqItem {
+        padding: 16px;
+    }
+
+    .faqQuestion {
+        font-size: 15px;
+    }
+
+    .faqAnswer {
+        font-size: 14px;
+    }
 }
 
 /* === CTA SECTION === */
