@@ -262,6 +262,14 @@
     color: #b62426;
 }
 
+.heroTitleRegion {
+    display: block;
+    margin-top: 16px;
+    font-size: clamp(18px, 2.5vw, 28px);
+    line-height: 1.4;
+    letter-spacing: 2px;
+}
+
 .heroDesc {
     font-family: var(--font-montserrat), 'Montserrat', sans-serif;
     font-size: 18px;
@@ -947,13 +955,51 @@
 }
 
 /* === MAP SECTION === */
+.serviceDetails {
+    display: inline-block;
+    margin-top: 16px;
+    color: #ff6769;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+a.serviceCard {
+    display: block;
+}
+
+a.serviceCard:focus-visible {
+    outline: 2px solid #ff7779;
+    outline-offset: 4px;
+}
+
+.serviceNavigation {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 28px;
+    margin-top: 32px;
+    line-height: 1.6;
+    color: #ff7779;
+}
+
+.serviceNavigation a:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
 .mapSection {
     position: relative;
 }
 
-.map {
-    width: 100%;
+.mapViewport {
     height: 500px;
+    overflow: hidden;
+}
+
+.map {
+    display: block;
+    width: 100%;
+    /* Keep the widget's bottom ad strip below the visible map. */
+    height: calc(100% + 120px);
     border: none;
     filter: grayscale(100%) contrast(1.1);
 }
@@ -1247,7 +1293,7 @@
         max-width: 100%;
     }
 
-    .map {
+    .mapViewport {
         height: 350px;
     }
 
@@ -1625,7 +1671,7 @@
         font-size: 24px;
     }
 
-    .map {
+    .mapViewport {
         height: 300px;
     }
 

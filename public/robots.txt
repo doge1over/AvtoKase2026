@@ -3,7 +3,6 @@
 
 User-agent: *
 Allow: /
-Disallow: /_next/
 Disallow: /api/
 
 # Sitemap

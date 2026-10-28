@@ -1,6 +1,8 @@
 'use client';
 
 import { useState } from 'react';
+import { galleryItems } from '../galleryImages';
+import { serviceNavigation } from '../serviceNavigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './gallery.module.css';
@@ -8,37 +10,11 @@ import { PhoneIcon, ClockIcon, MapPinIcon, ArrowLeftIcon, CloseIcon } from '../c
 
 export default function Gallery() {
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
-
-    const galleryItems = [
-        { id: 1, src: '/gallery/IMG_8192 1.webp', title: 'Ремонт подвески автомобиля в Автокейс Токсово' },
-        { id: 2, src: '/gallery/IMG_8311 1.webp', title: 'Замена тормозных дисков в автосервисе' },
-        { id: 3, src: '/gallery/IMG_72311 1.webp', title: 'Диагностика ходовой части автомобиля' },
-        { id: 4, src: '/gallery/IMG_72331 1.webp', title: 'Ремонт двигателя в Автокейс' },
-        { id: 5, src: '/gallery/IMG_7232 1.webp', title: 'Замена масла и фильтров' },
-        { id: 6, src: '/gallery/IMG_7234 1.webp', title: 'Обслуживание тормозной системы' },
-        { id: 7, src: '/gallery/IMG_7240 1.webp', title: 'Ремонт подвески — замена амортизаторов' },
-        { id: 8, src: '/gallery/IMG_7255 1.webp', title: 'Шиномонтаж и балансировка колёс' },
-        { id: 9, src: '/gallery/IMG_7305 1.webp', title: 'Компьютерная диагностика автомобиля' },
-        { id: 10, src: '/gallery/IMG_7376 1.webp', title: 'Ремонт топливной системы' },
-        { id: 11, src: '/gallery/IMG_7401 1.webp', title: 'Развал-схождение на стенде' },
-        { id: 12, src: '/gallery/IMG_7402 1.webp', title: 'Регулировка углов установки колёс' },
-        { id: 13, src: '/gallery/IMG_7583 1.webp', title: 'Заправка автокондиционера' },
-        { id: 14, src: '/gallery/IMG_7585 1.webp', title: 'Проверка герметичности кондиционера' },
-        { id: 15, src: '/gallery/IMG_7588 1.webp', title: 'Ремонт выхлопной системы' },
-        { id: 16, src: '/gallery/IMG_7624 1.webp', title: 'Замена ремня ГРМ' },
-        { id: 17, src: '/gallery/IMG_7885 1.webp', title: 'Капитальный ремонт двигателя' },
-        { id: 18, src: '/gallery/IMG_7886 1.webp', title: 'Сборка двигателя после ремонта' },
-        { id: 19, src: '/gallery/IMG_7893 1.webp', title: 'Ремонт коробки передач' },
-        { id: 20, src: '/gallery/IMG_7893 2.webp', title: 'Обслуживание трансмиссии' },
-        { id: 21, src: '/gallery/IMG_6484 1.webp', title: 'Замена сцепления автомобиля' },
-        { id: 22, src: '/gallery/IMG_6532 1.webp', title: 'Ремонт электрооборудования' },
-        { id: 23, src: '/gallery/IMG_6728 1.webp', title: 'Подготовка автомобиля к ТО' },
-        { id: 24, src: '/gallery/IMG_7228 1.webp', title: 'Ремонт рулевого управления' },
-    ];
+    const [visibleCount, setVisibleCount] = useState(8);
 
     const navItems = [
         { name: 'Главная', href: '/' },
-        { name: 'Услуги', href: '/#services' },
+        { name: 'Услуги', href: '/uslugi' },
         { name: 'Цены', href: '/#prices' },
         { name: 'Отзывы', href: '/#reviews' },
         { name: 'Галерея', href: '/gallery' },
@@ -74,13 +50,13 @@ export default function Gallery() {
                         <div className={styles.workTime}>
                             <ClockIcon /> 10:00 — 21:00
                         </div>
-                        <a href="tel:+79110141751" className={styles.phone}>
-                            +7 (911) 014-17-51
+                        <a href="tel:+79681951071" className={styles.phone}>
+                            +7 (968) 195-10-71
                         </a>
                     </div>
-                    <button className={styles.btnPrimary}>
+                    <a href="tel:+79681951071" className={styles.btnPrimary}>
                         <PhoneIcon /> ЗАПИСАТЬСЯ
-                    </button>
+                    </a>
                 </div>
             </header>
 
@@ -93,15 +69,20 @@ export default function Gallery() {
                 <p className={styles.pageDesc}>
                     Фотографии выполненных работ в автосервисе Автокейс — ремонт авто в Токсово
                 </p>
+                <nav className={styles.serviceNavigation} aria-label="Услуги автосервиса">
+                    {serviceNavigation.map(item => <Link href={item.href} key={item.href}>{item.title} →</Link>)}
+                </nav>
             </section>
 
             {/* Gallery Grid */}
             <section className={styles.gallerySection}>
-                <div className={styles.galleryGrid}>
-                    {galleryItems.map((item) => (
-                        <div
+                <div id="gallery-grid" className={styles.galleryGrid}>
+                    {galleryItems.slice(0, visibleCount).map((item, index) => (
+                        <button
+                            type="button"
                             key={item.id}
                             className={styles.galleryItem}
+                            aria-label={`Открыть фото: ${item.title}`}
                             onClick={() => setSelectedImage(item.src)}
                         >
                             <Image
@@ -109,27 +90,34 @@ export default function Gallery() {
                                 alt={item.title}
                                 width={400}
                                 height={400}
-                                quality={75}
-                                loading="lazy"
+                                sizes="(max-width: 768px) calc((100vw - 48px) / 2), (max-width: 1024px) calc((100vw - 152px) / 3), (max-width: 1520px) calc((100vw - 168px) / 4), 338px"
+                                quality={65}
+                                priority={index === 0}
+                                loading={index === 0 ? undefined : 'lazy'}
                                 placeholder="blur"
                                 blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAUH/8QAIhAAAgEDBAMBAAAAAAAAAAAAAQIDAAQRBQYSIRMxQVH/xAAVAQEBAAAAAAAAAAAAAAAAAAADBP/EABkRAAIDAQAAAAAAAAAAAAAAAAECABEhA//aAAwDAQACEQMRAD8AzoW9tLcwyXEaySwqVR2UEoCckA/BnvFVNO2/ptvbRxrYWrBVC5khViT9JJG5P0mlKECnsU9LbZ//2Q=="
                             />
-                        </div>
+                        </button>
                     ))}
+                </div>
+                <div className={styles.galleryMore}>
+                    <p aria-live="polite">Показано {Math.min(visibleCount, galleryItems.length)} из {galleryItems.length} фотографий</p>
+                    {visibleCount < galleryItems.length && <button type="button" className={styles.btnSecondary} aria-controls="gallery-grid" onClick={() => setVisibleCount(count => Math.min(count + 8, galleryItems.length))}>Показать ещё фотографии</button>}
                 </div>
             </section>
 
             {/* Lightbox */}
             {selectedImage && (
                 <div className={styles.lightbox} onClick={() => setSelectedImage(null)}>
-                    <button className={styles.lightboxClose} onClick={() => setSelectedImage(null)}>
+                    <button aria-label="Закрыть фотографию" className={styles.lightboxClose} onClick={() => setSelectedImage(null)}>
                         <CloseIcon />
                     </button>
                     <Image
                         src={selectedImage}
-                        alt="Gallery"
+                        alt={galleryItems.find(item => item.src === selectedImage)?.title ?? 'Фотография автосервиса Автокейс'}
                         width={1200}
                         height={1200}
+                        sizes="90vw"
                         quality={90}
                         onClick={(e) => e.stopPropagation()}
                         style={{ objectFit: 'contain', maxWidth: '90vw', maxHeight: '90vh', width: 'auto', height: 'auto' }}
@@ -142,8 +130,8 @@ export default function Gallery() {
                 <h2 className={styles.ctaTitle}>Хотите такой же результат?</h2>
                 <p className={styles.ctaDesc}>Запишитесь на сервис прямо сейчас</p>
                 <div className={styles.ctaButtons}>
-                    <a href="tel:+79110141751" className={styles.btnPhone}>
-                        <PhoneIcon /> +7 (911) 014-17-51
+                    <a href="tel:+79681951071" className={styles.btnPhone}>
+                        <PhoneIcon /> +7 (968) 195-10-71
                     </a>
                     <Link href="/" className={styles.btnBack}>
                         <ArrowLeftIcon /> НА ГЛАВНУЮ
@@ -193,7 +181,7 @@ export default function Gallery() {
                             <MapPinIcon /> Токсово, Лен. область, Ленинградское ш. 13А
                         </div>
                         <div className={styles.footerContact}>
-                            <PhoneIcon /> +7 (911) 014-17-51
+                            <PhoneIcon /> +7 (968) 195-10-71
                         </div>
                         <div className={styles.footerContact}>
                             <ClockIcon /> 10:00 — 21:00

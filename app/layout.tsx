@@ -1,19 +1,20 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import { Unbounded, Montserrat } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import YandexMetrika from "./components/YandexMetrika";
+import { tireStartingPrice, alignmentStartingPrice, otherPrices, airConditioningPrices, formatPrice } from './servicePrices';
 
-const unbounded = Unbounded({
-    subsets: ['cyrillic', 'latin'],
-    weight: ['600', '700', '800', '900'],
+const unbounded = localFont({
+    src: '../public/fonts/Unbounded-latin-cyrillic.woff2',
+    weight: '600 900',
     display: 'swap',
     variable: '--font-unbounded',
 });
 
-const montserrat = Montserrat({
-    subsets: ['cyrillic', 'latin'],
-    weight: ['400', '500', '600', '700'],
+const montserrat = localFont({
+    src: '../public/fonts/Montserrat-latin-cyrillic.woff2',
+    weight: '400 700',
     display: 'swap',
     variable: '--font-montserrat',
 });
@@ -22,8 +23,8 @@ export const metadata: Metadata = {
     metadataBase: new URL('https://avtoservis-toksovo.ru'),
 
     // Основные мета-теги
-    title: "Автосервис Автокейс в Токсово — Ремонт авто, шиномонтаж, развал-схождение",
-    description: "Автосервис Автокейс в Токсово (Ленинградская область). Ремонт автомобилей любой сложности: шиномонтаж от 1400₽, развал-схождение, диагностика, ремонт двигателя. Работаем ежедневно 10:00-21:00. ☎ +7 (911) 014-17-51",
+    title: "Автосервис в Токсово — цены и ремонт авто | Автокейс",
+    description: `Автосервис Автокейс в Токсово. Шиномонтаж от ${formatPrice(tireStartingPrice)}, развал-схождение, диагностика и ремонт двигателя. Ленинградское шоссе, 13А. Ежедневно 10:00–21:00.`,
 
     // Авторство
     authors: [{ name: "Автокейс" }],
@@ -50,7 +51,7 @@ export const metadata: Metadata = {
         url: "https://avtoservis-toksovo.ru",
         siteName: "Автокейс — Автосервис в Токсово",
         title: "Автосервис Автокейс в Токсово — Ремонт авто, шиномонтаж, развал-схождение",
-        description: "Качественный ремонт автомобилей в Токсово. Шиномонтаж, развал-схождение, диагностика, ремонт двигателя. Рейтинг 4.9 на Яндекс. Работаем ежедневно 10:00-21:00.",
+        description: "Качественный ремонт автомобилей в Токсово. Шиномонтаж, развал-схождение, диагностика, ремонт двигателя. Рейтинг 5.0 на Яндекс. Работаем ежедневно 10:00-21:00.",
         images: [
             {
                 url: "/og-image.jpg",
@@ -65,15 +66,14 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "Автосервис Автокейс в Токсово",
-        description: "Качественный ремонт автомобилей в Токсово. Шиномонтаж, развал-схождение, диагностика. Рейтинг 4.9 ⭐",
+        description: "Качественный ремонт автомобилей в Токсово. Шиномонтаж, развал-схождение, диагностика. Рейтинг 5.0 ⭐",
         images: ["/og-image.jpg"],
     },
 
-    // Верификация (замените на свои коды после регистрации)
-    // verification: {
-    //   yandex: "ваш_код_верификации_яндекс",
-    //   google: "ваш_код_верификации_google",
-    // },
+    verification: {
+        google: process.env.GOOGLE_SITE_VERIFICATION || undefined,
+        yandex: process.env.YANDEX_SITE_VERIFICATION || undefined,
+    },
 
     // Альтернативные ссылки
     alternates: {
@@ -106,7 +106,7 @@ export default function RootLayout({
         "alternateName": "Avtokeys",
         "description": "Автосервис в Токсово — профессиональный ремонт автомобилей всех марок с 2014 года. Шиномонтаж, развал-схождение, диагностика, ремонт двигателя, заправка кондиционеров. Обслуживаем Токсово, Мурино, Девяткино, Кузьмолово и Санкт-Петербург.",
         "url": "https://avtoservis-toksovo.ru",
-        "telephone": "+7-911-014-17-51",
+        "telephone": "+7-968-195-10-71",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "Ленинградское шоссе, 13А",
@@ -144,36 +144,6 @@ export default function RootLayout({
             { "@type": "City", "name": "Кузьмолово" },
             { "@type": "City", "name": "Санкт-Петербург" }
         ],
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.9",
-            "reviewCount": "127",
-            "bestRating": "5",
-            "worstRating": "1"
-        },
-        "review": [
-            {
-                "@type": "Review",
-                "author": { "@type": "Person", "name": "Александр М." },
-                "datePublished": "2026-03",
-                "reviewBody": "Отличный сервис! Сделали развал-схождение быстро и качественно. Цены адекватные, мастера вежливые.",
-                "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
-            },
-            {
-                "@type": "Review",
-                "author": { "@type": "Person", "name": "Елена К." },
-                "datePublished": "2026-02",
-                "reviewBody": "Обратилась с проблемой кондиционера. Диагностировали и заправили за час. Теперь всё работает отлично.",
-                "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
-            },
-            {
-                "@type": "Review",
-                "author": { "@type": "Person", "name": "Дмитрий В." },
-                "datePublished": "2026-01",
-                "reviewBody": "Делал капремонт двигателя. Работа сложная, но ребята справились на отлично. Машина как новая!",
-                "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
-            }
-        ],
         "image": "https://avtoservis-toksovo.ru/og-image.jpg",
         "sameAs": [
             "https://vk.com/avtokeis",
@@ -190,17 +160,17 @@ export default function RootLayout({
                         "name": "Шиномонтаж",
                         "description": "Сезонная замена, ремонт и балансировка шин для колёс до 26 дюймов"
                     },
-                    "price": "1400",
+                    "price": tireStartingPrice,
                     "priceCurrency": "RUB"
                 },
                 {
                     "@type": "Offer",
                     "itemOffered": {
                         "@type": "Service",
-                        "name": "Развал-схождение",
+                        "name": "Развал-схождение — 1 ось, легковой автомобиль",
                         "description": "Регулировка углов установки колёс на 4-х стоечном подъёмнике с компьютерной диагностикой"
                     },
-                    "price": "1000",
+                    "price": alignmentStartingPrice,
                     "priceCurrency": "RUB"
                 },
                 {
@@ -210,17 +180,17 @@ export default function RootLayout({
                         "name": "Компьютерная диагностика",
                         "description": "Полная компьютерная диагностика всех систем автомобиля"
                     },
-                    "price": "1500",
+                    "price": otherPrices.diagnostics,
                     "priceCurrency": "RUB"
                 },
                 {
                     "@type": "Offer",
                     "itemOffered": {
                         "@type": "Service",
-                        "name": "Заправка кондиционера",
-                        "description": "Диагностика и заправка автомобильного кондиционера на автоматической станции"
+                        "name": "Диагностика кондиционера",
+                        "description": "Диагностика кондиционера; хладагент и заправка рассчитываются отдельно"
                     },
-                    "price": "1500",
+                    "price": airConditioningPrices[0].price,
                     "priceCurrency": "RUB"
                 },
                 {
@@ -230,7 +200,7 @@ export default function RootLayout({
                         "name": "Ремонт двигателя",
                         "description": "Капитальный и частичный ремонт бензиновых и дизельных двигателей"
                     },
-                    "price": "35000",
+                    "price": otherPrices.engine,
                     "priceCurrency": "RUB"
                 },
                 {
@@ -279,13 +249,13 @@ export default function RootLayout({
                     `,
                 }}
             />
-            <noscript>
-                <div>
-                    <img src="https://mc.yandex.ru/watch/106768288" style={{ position: 'absolute', left: '-9999px' }} alt="" />
-                </div>
-            </noscript>
         </head>
         <body>
+        <noscript>
+            <div>
+                <img src="https://mc.yandex.ru/watch/106768288" style={{ position: 'absolute', left: '-9999px' }} alt="" />
+            </div>
+        </noscript>
         {children}
         <Suspense fallback={null}>
             <YandexMetrika />

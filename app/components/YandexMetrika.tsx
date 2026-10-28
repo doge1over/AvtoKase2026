@@ -28,22 +28,27 @@ export default function YandexMetrika() {
   }, [pathname, searchParams]);
 
   useEffect(() => {
-    const phoneLinks = document.querySelectorAll('a[href^="tel:"]');
-
-    const handlePhoneClick = () => {
-      trackGoal('phone_click');
+    const handleContactClick = (event: MouseEvent) => {
+      if (!(event.target instanceof Element)) return;
+      const link = event.target.closest<HTMLAnchorElement>('a[href]');
+      if (!link) return;
+      if (link.protocol === 'tel:') {
+        trackGoal('phone_click');
+        return;
+      }
+      if (link.hostname === 'yandex.ru' && link.pathname.startsWith('/maps/')) {
+        if (link.pathname.includes('/reviews')) trackGoal('reviews_click');
+        else if (link.pathname.includes('/prices')) trackGoal('price_source_click');
+        else trackGoal('route_click');
+      } else if (link.hostname === 'vk.com') {
+        trackGoal('vk_click');
+      }
     };
-
-    phoneLinks.forEach(link => {
-      link.addEventListener('click', handlePhoneClick);
-    });
-
+    document.addEventListener('click', handleContactClick);
     return () => {
-      phoneLinks.forEach(link => {
-        link.removeEventListener('click', handlePhoneClick);
-      });
+      document.removeEventListener('click', handleContactClick);
     };
-  }, [pathname]);
+  }, []);
 
   return null;
 }
