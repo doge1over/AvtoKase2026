@@ -71,7 +71,7 @@ export const metadata: Metadata = {
     },
 
     verification: {
-        google: process.env.GOOGLE_SITE_VERIFICATION || undefined,
+        google: process.env.GOOGLE_SITE_VERIFICATION || 'rf9inF_5gko5ae3NAXJwcTgfI7oHVmSUhBag518uo-0',
         yandex: process.env.YANDEX_SITE_VERIFICATION || undefined,
     },
 
